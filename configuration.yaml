@@ -14,7 +14,7 @@ homeassistant:
   #customize: !include customize.yaml
   #customize_glob: !include customize_glob.yaml
   # Packages
-  packages: !include_dir_named packages
+  #packages: !include_dir_named packages
   
 # Show links to resources in log and frontend
 #introduction:
@@ -79,12 +79,12 @@ tado:
   username:     !secret tado_username
   password:     !secret tado_password
  
-sensor:         !include sensors.yaml
-binary_sensor:  !include binary_sensors.yaml
-switch:         !include switches.yaml  
-device_tracker: !include device_tracker.yaml  
+#sensor:         !include sensors.yaml
+#binary_sensor:  !include binary_sensors.yaml
+#switch:         !include switches.yaml  
+#device_tracker: !include device_tracker.yaml  
 
-group:          !include groups.yaml
-automation:     !include automations.yaml
-script:         !include scripts.yaml
-zone:           !include zones.yaml
+#group:          !include groups.yaml
+#automation:     !include automations.yaml
+#script:         !include scripts.yaml
+#zone:           !include zones.yaml
