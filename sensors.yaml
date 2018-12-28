@@ -1,3 +1,5 @@
 # Travis CI
 - platform: travisci
   api_key: !secret travis_github_apikey
+  monitored_conditions:
+    - state
