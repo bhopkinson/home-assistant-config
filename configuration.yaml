@@ -11,14 +11,13 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/London
   # Customization files
-  #customize: !include customize.yaml
-  #customize_glob: !include customize_glob.yaml
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
   # Packages
   #packages: !include_dir_named packages
   
 # Show links to resources in log and frontend
 #introduction:
-
 
 # Enables the frontend
 frontend:
@@ -75,7 +74,6 @@ tts:
 
 # Cloud
 cloud:
-
 
 tado:
   username:     !secret tado_username

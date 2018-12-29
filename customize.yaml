@@ -1,0 +1,6 @@
+switch.hotwater:
+  friendly_name: 'Hot water'
+  icon: mdi:water
+
+sensor.bhopkinsonhomeassistantconfig_state:
+  friendly_name: 'Home Assistant Config - Travis Status'

@@ -1,0 +1,18 @@
+"sensor.*_overlay":
+  hidden: true
+"sensor.*_heating":
+  hidden: true
+"sensor.*_link":
+  hidden: true
+"sensor.*_power":
+  hidden: true
+"sensor.*_tado_mode":
+  hidden: true
+"sensor.*_humidity":
+  hidden: true
+"sensor.*_temperature":
+  hidden: true
+"sensor.*_tado_bridge_status":
+  hidden: true
+"sensor.bhopkinsonhomeassistantconfig*":
+  hidden: true
