@@ -25,6 +25,9 @@ frontend:
 # Enables configuration UI
 config:
 
+# https://github.com/custom-components/custom_updater
+custom_updater:
+
 http:
   # Secrets are defined in the file secrets.yaml
   # api_password: !secret http_password
