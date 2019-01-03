@@ -8,7 +8,9 @@
 !.gitignore
 !*.md
 !*.py
+!*.js
 !custom_components
+!www
 
 # Ignore folders.
 .storage
