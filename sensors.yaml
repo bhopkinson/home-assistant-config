@@ -3,3 +3,8 @@
   api_key: !secret travis_github_apikey
   monitored_conditions:
     - state
+
+- platform: mqtt
+  name: homeassistantrestartcancellationtoken
+  state_topic: orchardhouse/homeassistant/restart/cancel
+  value_template: "{{ value_json.token }}"
