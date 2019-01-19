@@ -54,6 +54,12 @@ mqtt:
   broker: !secret ip_address
   port: 1883
   client_id: homeassistant
+  birth_message:
+    topic: 'orchardhouse/homeassistant/status'
+    payload: 'online'
+  will_message:
+    topic: 'orchardhouse/homeassistant/status'
+    payload: 'offline'
 
 # Recorder
 recorder:
