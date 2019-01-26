@@ -91,7 +91,7 @@ tado:
 sensor:         !include sensors.yaml
 #binary_sensor:  !include binary_sensors.yaml
 #switch:         !include switches.yaml  
-#device_tracker: !include device_tracker.yaml  
+device_tracker: !include device_tracker.yaml  
 
 #group:          !include groups.yaml
 #automation:     !include automations.yaml
