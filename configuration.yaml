@@ -96,4 +96,4 @@ device_tracker: !include device_tracker.yaml
 #group:          !include groups.yaml
 #automation:     !include automations.yaml
 #script:         !include scripts.yaml
-#zone:           !include zones.yaml
+zone:           !include zones.yaml

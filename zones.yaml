@@ -1,0 +1,35 @@
+- name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  radius: 36
+  icon: mdi:home
+
+- name: Enable
+  latitude: 52.201502
+  longitude: -1.724378
+  radius: 50
+  icon: mdi:office-building
+
+- name: Moreton Morrell College
+  latitude: 52.196800
+  longitude: -1.558122
+  radius: 600
+  icon: mdi:office-building
+
+- name: BTB HQ
+  latitude: 52.244145
+  longitude: -1.390544
+  radius: 30
+  icon: mdi:dumbbell
+
+- name: The Rookery
+  latitude: 52.135507
+  longitude: -1.612324
+  radius: 100
+  icon: mdi:horseshoe
+
+- name: Radway
+  latitude: 52.134311
+  longitude: -1.456080
+  radius: 110
+  icon: mdi:horseshoe
