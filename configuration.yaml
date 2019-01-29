@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
   # Packages
-  #packages: !include_dir_named packages
+  packages: !include_dir_named packages
 
 # Show links to resources in log and frontend
 #introduction:

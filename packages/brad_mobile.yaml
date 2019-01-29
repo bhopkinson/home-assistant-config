@@ -1,0 +1,50 @@
+###############
+# Brad Mobile #
+###############
+
+binary_sensor:
+  - platform: mqtt
+    name: brad_mobile_seat_leon
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.SeatLeon }}"
+
+sensor:
+  - platform: mqtt
+    name: brad_mobile_ssid
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.SSID }}"
+
+  - platform: mqtt
+    name: brad_mobile_volume_ringer
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.VolumeRinger }}"
+  
+  - platform: mqtt
+    name: brad_mobile_volume_media
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.VolumeMedia }}"
+
+  - platform: mqtt
+    name: brad_mobile_volume_alarm
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.VolumeAlarm }}"
+
+  - platform: mqtt
+    name: brad_mobile_volume_notification
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.VolumeNotification }}"
+
+  - platform: mqtt
+    name: brad_mobile_volume_system
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.VolumeSystem }}"
+
+  - platform: mqtt
+    name: brad_mobile_silent_mode
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.SilentMode }}"
+
+  - platform: mqtt
+    name: brad_mobile_battery_level
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.BatteryLevel }}"
