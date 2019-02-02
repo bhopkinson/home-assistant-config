@@ -1,3 +1,6 @@
+- platform: workday
+  country: England
+
 # Brad in the Office
 - platform: bayesian
   name: 'brad_in_office'
