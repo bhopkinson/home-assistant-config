@@ -1,0 +1,25 @@
+# Brad in the Office
+- platform: bayesian
+  name: 'brad_in_office'
+  prior: 0.2678571428571
+  observations:
+  - entity_id: 'binary_sensor.brad_mobile_seat_leon'
+    prob_given_true: 0.05
+    prob_given_false: 0.2848101265822
+    platform: 'state'
+    to_state: 'on'
+  - entity_id: 'device_tracker.life360_brad'
+    prob_given_true: 0.994
+    prob_given_false: 0.1
+    platform: 'state'
+    to_state: 'Enable'
+  - entity_id: 'sensor.brad_mobile_ssid'
+    prob_given_true: 0.999
+    prob_given_false: 0.01
+    platform: 'state'
+    to_state: 'Enable Guest Wifi'
+  - entity_id: 'sensor.brad_mobile_ssid'
+    prob_given_true: 0.001
+    prob_given_false: 0.4787
+    platform: 'state'
+    to_state: 'Orchard House'
