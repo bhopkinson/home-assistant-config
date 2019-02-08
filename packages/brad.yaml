@@ -50,3 +50,15 @@ sensor:
     name: brad_mobile_battery_level
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.BatteryLevel }}"
+
+##########
+# Inputs #
+##########
+
+input_number:
+  enable_current_password_integer:
+    min: 0
+    max: 99999
+    step: 1
+    mode: box
+    icon: textbox-password
