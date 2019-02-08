@@ -61,7 +61,7 @@ input_number:
     max: 99999
     step: 1
     mode: box
-    icon: textbox-password
+    icon: mdi:textbox-password
 
 # Brad in the Office Bayesian
 binary_sensor:
