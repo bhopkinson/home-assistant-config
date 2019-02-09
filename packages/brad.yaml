@@ -63,7 +63,16 @@ input_number:
     mode: box
     icon: mdi:textbox-password
 
-# Brad in the Office Bayesian
+switch:
+  - platform: rest
+    name: 'enable_status'
+    resource: http://192.168.0.10:1880/api/enable/status
+    method: PUT
+    timeout: 60
+    body_on: 1
+    body_off: 0
+    scan_interval: 1800 # 30 minutes
+
 binary_sensor:
   - platform: bayesian
     name: 'brad_in_office'
