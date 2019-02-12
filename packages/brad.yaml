@@ -66,9 +66,9 @@ input_number:
 switch:
   - platform: rest
     name: 'enable_status'
-    resource: http://192.168.0.10:1880/api/enable/status
+    resource: http://node-red:1880/api/enable/status
     method: PUT
-    timeout: 60
+    timeout: 120 # 2 minutes
     body_on: 1
     body_off: 0
     scan_interval: 1800 # 30 minutes

@@ -51,7 +51,7 @@ conversation:
 
 # MQTT
 mqtt:
-  broker: !secret ip_address
+  broker: MQTT
   port: 1883
   client_id: homeassistant
   birth_message:
@@ -66,9 +66,6 @@ recorder:
   db_url: !secret recorder_db_url
   purge_keep_days: 2
   purge_interval: 1
-  include:
-    domains:
-      - sensor
 
 # Enables support for tracking state changes over time
 history:
@@ -78,7 +75,7 @@ logbook:
 
 # Use InfluxDB
 influxdb: 
-  host: !secret ip_address
+  host: influxdb
   include:
     domains:
       - sensor
