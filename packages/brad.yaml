@@ -15,25 +15,25 @@ binary_sensor:
     prior: 0.2678571428571
     observations:
     - entity_id: 'binary_sensor.brad_mobile_seat_leon'
-      prob_given_true: 0.01
-      prob_given_false: 0.2848101265822
       platform: 'state'
       to_state: 'on'
+      prob_given_true: 0.01
+      prob_given_false: 0.2848101265822
     - entity_id: 'device_tracker.life360_brad'
-      prob_given_true: 0.9
-      prob_given_false: 0.1
       platform: 'state'
       to_state: 'Enable'
-    - entity_id: 'sensor.brad_mobile_ssid'
       prob_given_true: 0.9
-      prob_given_false: 0.1
+      prob_given_false: 0.05
+    - entity_id: 'sensor.brad_mobile_ssid'
       platform: 'state'
       to_state: 'Enable Guest Wifi'
+      prob_given_true: 0.8
+      prob_given_false: 0.1
     - entity_id: 'sensor.brad_mobile_ssid'
-      prob_given_true: 0.001
-      prob_given_false: 0.4787
       platform: 'state'
       to_state: 'Orchard House'
+      prob_given_true: 0.001
+      prob_given_false: 0.4787
 
 sensor:
   - platform: mqtt
