@@ -44,7 +44,10 @@ updater:
   include_used_components: true
 
 # Discover some devices automatically
-discovery:
+# discovery:
+
+# System Health
+system_health:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -99,6 +102,17 @@ tado:
   username:     !secret tado_username
   password:     !secret tado_password
  
+person:
+  - name: Brad
+    id: brad
+    device_trackers:
+      - device_tracker.brad
+      - device_tracker.life360_brad
+  - name: Heather
+    id: heather
+    device_trackers:
+      -  device_tracker.heather
+
 sensor:         !include sensors.yaml
 binary_sensor:  !include binary_sensors.yaml
 #switch:         !include switches.yaml  
