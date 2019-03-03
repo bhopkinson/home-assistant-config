@@ -1,10 +1,10 @@
 - platform: mqtt
-  name: "Hall lights"
+  name: "Hall"
   command_topic: "shellies/shelly1-943C58/relay/0/command"
   state_topic: "shellies/shelly1-943C58/relay/0"
   payload_on: "on"
   payload_off: "off"
   retain: true
-  availability_topic: shellies/shelly1-943C58/online
-  payload_available: true
-  payload_not_available: false
+  #availability_topic: shellies/shelly1-943C58/online
+  #payload_available: "true"
+  #payload_not_available: "false"
