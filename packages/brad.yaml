@@ -19,7 +19,7 @@ binary_sensor:
       to_state: 'on'
       prob_given_true: 0.01
       prob_given_false: 0.2848101265822
-    - entity_id: 'device_tracker.life360_brad'
+    - entity_id: 'person.brad'
       platform: 'state'
       to_state: 'Enable'
       prob_given_true: 0.9
