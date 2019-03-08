@@ -82,6 +82,8 @@ influxdb:
   include:
     domains:
       - sensor
+  exclude:
+    - sensor.btb_gate_closed
   tags:
     source: ha
 
