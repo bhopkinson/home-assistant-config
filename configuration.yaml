@@ -83,7 +83,8 @@ influxdb:
     domains:
       - sensor
   exclude:
-    - sensor.btb_gate_closed
+    entities:
+      - sensor.btb_gate_closed
   tags:
     source: ha
 
