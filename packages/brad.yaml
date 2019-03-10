@@ -35,11 +35,6 @@ binary_sensor:
       prob_given_true: 0.001
       prob_given_false: 0.4787
 
-  - platform: tod
-    name: btb_gate_closed
-    after: '19:30'
-    before: '20:30'
-
 sensor:
   - platform: mqtt
     name: brad_mobile_ssid
