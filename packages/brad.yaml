@@ -76,6 +76,16 @@ sensor:
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.BatteryLevel }}"
 
+  - platform: mqtt
+    name: brad_mobile_mqtt_retry_count
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.MqttRetry }}"
+
+  - platform: mqtt
+    name: brad_mobile_timestamp
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.Timestamp }}"
+
 input_number:
   enable_current_password_integer:
     min: 0
