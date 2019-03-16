@@ -35,11 +35,6 @@ binary_sensor:
       prob_given_true: 0.001
       prob_given_false: 0.4787
 
-  - platform: tod
-    name: btb_gate_closed
-    after: '19:30'
-    before: '20:30'
-
 sensor:
   - platform: mqtt
     name: brad_mobile_ssid
@@ -81,6 +76,20 @@ sensor:
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.BatteryLevel }}"
 
+  - platform: mqtt
+    name: brad_mobile_mqtt_retry_count
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.MqttRetry }}"
+
+  - platform: mqtt
+    name: brad_mobile_timestamp
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.Timestamp }}"
+    
+###############
+# Brad Office #
+###############
+
 input_number:
   enable_current_password_integer:
     min: 0
@@ -88,6 +97,11 @@ input_number:
     step: 1
     mode: box
     icon: mdi:textbox-password
+
+input_text:
+  enable_door:
+    mode: password
+    icon: mdi:lock-outline
 
 switch:
   - platform: rest
