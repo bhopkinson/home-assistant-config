@@ -85,6 +85,10 @@ sensor:
     name: brad_mobile_timestamp
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.Timestamp }}"
+    
+###############
+# Brad Office #
+###############
 
 input_number:
   enable_current_password_integer:
@@ -93,6 +97,11 @@ input_number:
     step: 1
     mode: box
     icon: mdi:textbox-password
+
+input_text:
+  enable_door:
+    mode: password
+    icon: mdi:lock-outline
 
 switch:
   - platform: rest
