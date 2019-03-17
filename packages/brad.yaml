@@ -87,7 +87,7 @@ sensor:
     value_template: "{{ value_json.Timestamp }}"
     
   - platform: mqtt
-    name: brad_mobile_INOFFICE
+    name: brad_mobile_tasker_variable_INOFFICE
     static_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.INOFFICE }}"
 
