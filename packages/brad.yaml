@@ -88,7 +88,7 @@ sensor:
     
   - platform: mqtt
     name: brad_mobile_tasker_variable_INOFFICE
-    static_topic: "orchardhouse/brad20pro/status"
+    state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.INOFFICE }}"
 
 ###############
