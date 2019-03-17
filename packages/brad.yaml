@@ -82,10 +82,15 @@ sensor:
     value_template: "{{ value_json.MqttRetry }}"
 
   - platform: mqtt
-    name: brad_mobile_timestamp
+    name: brad_mobile_mqtt_send_timestamp
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.Timestamp }}"
     
+  - platform: mqtt
+    name: brad_mobile_INOFFICE
+    static_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.INOFFICE }}"
+
 ###############
 # Brad Office #
 ###############
