@@ -9,14 +9,7 @@ binary_sensor:
     value_template: "{{ value_json.SeatLeon }}"
     payload_on: true
     payload_off: false
-
-  - platform: mqtt
-    name: brad_mobile_tasker_variable_INOFFICE
-    state_topic: "orchardhouse/brad20pro/status"
-    value_template: "{{ value_json.INOFFICE }}"
-    payload_on: true
-    payload_off: false 
-
+    
   - platform: bayesian
     name: 'brad_in_office'
     prior: 0.2678571428571
@@ -92,6 +85,11 @@ sensor:
     name: brad_mobile_mqtt_send_timestamp
     state_topic: "orchardhouse/brad20pro/status"
     value_template: "{{ value_json.Timestamp }}"
+    
+  - platform: mqtt
+    name: brad_mobile_tasker_variable_INOFFICE
+    state_topic: "orchardhouse/brad20pro/status"
+    value_template: "{{ value_json.INOFFICE }}"
 
 ###############
 # Brad Office #
