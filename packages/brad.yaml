@@ -100,7 +100,6 @@ input_number:
 
 input_text:
   enable_door:
-    mode: password
     icon: mdi:lock-outline
 
 switch:
