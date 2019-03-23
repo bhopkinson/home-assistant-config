@@ -101,10 +101,6 @@ tts:
 # Cloud
 cloud:
 
-tado:
-  username:     !secret tado_username
-  password:     !secret tado_password
- 
 person:
   - name: Brad
     id: brad
