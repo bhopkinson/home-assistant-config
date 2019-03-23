@@ -1,0 +1,24 @@
+tado:
+  username:     !secret tado_username
+  password:     !secret tado_password
+
+device_tracker:
+  - platform: tado
+    username: !secret tado_username
+    password: !secret tado_password
+    home_id: !secret tado_home_id
+
+switch:
+  - platform: rest
+    name: 'hotwater'
+    resource: http://node-red:1880/api/tado/hotwater
+    method: PUT
+    body_on: 'ON'
+    body_off: 'OFF'
+    headers:
+      Content-Type: text/plain
+    icon: mdi:water
+
+timer:
+  hotwater:
+    icon: mdi:camera-timer
