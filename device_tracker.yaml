@@ -9,3 +9,9 @@
   max_update_wait:
     minutes: 45
   interval_seconds: 12
+
+# tado
+- platform: tado
+  username: !secret tado_username
+  password: !secret tado_password
+  home_id: !secret tado_home_id
