@@ -19,3 +19,7 @@ binary_sensor:
     availability_topic: "shellies/shelly1-943C58/online"
     payload_available: "true"
     payload_not_available: "false"
+
+timer:
+  hall_light_timer:
+    icon: mdi:timer
