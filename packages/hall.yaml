@@ -22,4 +22,5 @@ binary_sensor:
 
 timer:
   hall_light_timer:
+    duration: 90
     icon: mdi:timer
