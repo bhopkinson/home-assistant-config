@@ -21,6 +21,6 @@ binary_sensor:
     payload_not_available: "false"
 
 timer:
-  hall_light_timer:
+  hall_light:
     duration: 90
     icon: mdi:timer
