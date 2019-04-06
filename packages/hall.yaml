@@ -24,7 +24,7 @@ binary_sensor:
     name: hall_motion_1_occupancy
     state_topic: "zigbee2mqtt/hall_motion_1/occupancy"
     availability_topic: "zigbee2mqtt/bridge/state"
-    payload_on: true
+    payload_on: "true"
     off_delay: 1
     device_class: "motion"
 
