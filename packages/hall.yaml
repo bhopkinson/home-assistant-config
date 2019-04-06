@@ -37,6 +37,7 @@ sensor:
     device_class: "illuminance"
 
   - platform: "mqtt"
+    name: hall_motion_1_battery
     state_topic: "zigbee2mqtt/hall_motion_1/battery"
     availability_topic: "zigbee2mqtt/bridge/state"
     unit_of_measurement: "%"
