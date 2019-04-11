@@ -8,7 +8,9 @@
   time_as: local
   max_update_wait:
     minutes: 45
-  interval_seconds: 12
+  interval_seconds: 15
+  warning_threshold: 1
+  error_threshold: 2
 
 # tado
 - platform: tado
