@@ -95,8 +95,8 @@ map:
 sun:
 
 # Text to speech
-tts:
-  - platform: google
+# tts:
+#   - platform: google_translate
 
 # Cloud
 cloud:
