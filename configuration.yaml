@@ -21,6 +21,8 @@ homeassistant:
 
 logger:
   default: debug
+  log:
+    homeassistant.components.tado: warn
 
 # Enables the frontend
 frontend:
