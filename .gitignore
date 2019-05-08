@@ -9,6 +9,7 @@
 !*.md
 !*.py
 !*.js
+!*.json
 !custom_components
 !custom_components/*
 !packages
