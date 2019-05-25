@@ -19,8 +19,61 @@ light:
 
   - platform: "mqtt"
     name: sign
-    state_topic: "zigbee2mqtt/sign_bulb" # zigbee2mqtt friendlyname: sign_bulb
+    state_topic: "zigbee2mqtt/sign_bulb"
     availability_topic: "zigbee2mqtt/bridge/state"
     brightness: true
     schema: "json"
     command_topic: "zigbee2mqtt/sign_bulb/set"
+
+  - platform: "mqtt"
+    name: porch_bulb_1
+    state_topic: "zigbee2mqtt/porch_bulb_1"
+    availability_topic: "zigbee2mqtt/porch_bulb_1/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/porch_bulb_1/set"
+
+  - platform: "mqtt"
+    name: porch_bulb_2
+    state_topic: "zigbee2mqtt/porch_bulb_2"
+    availability_topic: "zigbee2mqtt/porch_bulb_2/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/porch_bulb_2/set"
+
+  - platform: group
+    name: Porch Lights
+    entities:
+      - light.porch_bulb_1
+      - light.porch_bulb_2
+
+  - platform: "mqtt"
+    name: canopy_bulb_1
+    state_topic: "zigbee2mqtt/canopy_bulb_1"
+    availability_topic: "zigbee2mqtt/canopy_bulb_1/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/canopy_bulb_1/set"
+
+  - platform: "mqtt"
+    name: canopy_bulb_2
+    state_topic: "zigbee2mqtt/canopy_bulb_2"
+    availability_topic: "zigbee2mqtt/canopy_bulb_2/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/canopy_bulb_2/set"
+
+  - platform: "mqtt"
+    name: canopy_bulb_3
+    state_topic: "zigbee2mqtt/canopy_bulb_3"
+    availability_topic: "zigbee2mqtt/canopy_bulb_3/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/canopy_bulb_3/set"
+
+  - platform: group
+    name: Canopy Lights
+    entities:
+      - light.canopy_bulb_1
+      - light.canopy_bulb_2
+      - light.canopy_bulb_3

@@ -7,6 +7,46 @@ light:
     schema: "json"
     command_topic: "zigbee2mqtt/utility_group/set"
 
+  - platform: "mqtt"
+    name: utility_bulb_1
+    state_topic: "zigbee2mqtt/utility_bulb_1"
+    availability_topic: "zigbee2mqtt/utility_bulb_1/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/utility_bulb_1/set"
+
+  - platform: "mqtt"
+    name: utility_bulb_2
+    state_topic: "zigbee2mqtt/utility_bulb_2"
+    availability_topic: "zigbee2mqtt/utility_bulb_2/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/utility_bulb_2/set"
+
+  - platform: "mqtt"
+    name: utility_bulb_3
+    state_topic: "zigbee2mqtt/utility_bulb_3"
+    availability_topic: "zigbee2mqtt/utility_bulb_3/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/utility_bulb_3/set"
+
+  - platform: "mqtt"
+    name: utility_bulb_4
+    state_topic: "zigbee2mqtt/utility_bulb_4"
+    availability_topic: "zigbee2mqtt/utility_bulb_4/availability"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/utility_bulb_4/set"
+
+  - platform: group
+    name: Utility Lights
+    entities:
+      - light.utility_bulb_1
+      - light.utility_bulb_2
+      - light.utility_bulb_3
+      - light.utility_bulb_4
+
 binary_sensor:
   - platform: "mqtt"
     name: utility_motion_occupancy
