@@ -2,7 +2,7 @@
 
 light:
   - platform: "mqtt"
-    name: porch
+    name: porch_group
     state_topic: "zigbee2mqtt/porch_group" # zigbee2mqtt group friendlyname: porch_group
     availability_topic: "zigbee2mqtt/bridge/state"
     brightness: true
@@ -10,7 +10,7 @@ light:
     command_topic: "zigbee2mqtt/porch_group/set"
 
   - platform: "mqtt"
-    name: canopy
+    name: canopy_group
     state_topic: "zigbee2mqtt/canopy_group" # zigbee2mqtt group friendlyname: canopy_group
     availability_topic: "zigbee2mqtt/bridge/state"
     brightness: true
@@ -42,7 +42,7 @@ light:
     command_topic: "zigbee2mqtt/porch_bulb_2/set"
 
   - platform: group
-    name: Porch Lights
+    name: Porch
     entities:
       - light.porch_bulb_1
       - light.porch_bulb_2
@@ -72,7 +72,7 @@ light:
     command_topic: "zigbee2mqtt/canopy_bulb_3/set"
 
   - platform: group
-    name: Canopy Lights
+    name: Canopy
     entities:
       - light.canopy_bulb_1
       - light.canopy_bulb_2

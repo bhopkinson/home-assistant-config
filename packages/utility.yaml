@@ -1,6 +1,6 @@
 light:
   - platform: "mqtt"
-    name: utility
+    name: utility_group
     state_topic: "zigbee2mqtt/utility_group" # zigbee2mqtt group friendlyname: utility_group
     availability_topic: "zigbee2mqtt/bridge/state"
     brightness: true
@@ -40,7 +40,7 @@ light:
     command_topic: "zigbee2mqtt/utility_bulb_4/set"
 
   - platform: group
-    name: Utility Lights
+    name: Utility
     entities:
       - light.utility_bulb_1
       - light.utility_bulb_2
