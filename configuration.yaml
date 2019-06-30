@@ -69,6 +69,11 @@ mqtt:
     topic: 'orchardhouse/homeassistant/status'
     payload: 'offline'
 
+# ZWave
+zwave:
+  usb_path: /dev/ttyACM1
+  network_key: !secret zwave_network_key
+
 # Recorder
 recorder:
   db_url: !secret recorder_db_url
