@@ -1,17 +1,3 @@
-# life360
-- platform: life360
-  username: !secret life360_username
-  password: !secret life360_password
-  prefix: life360
-  driving_speed: 18
-  max_gps_accuracy: 200
-  time_as: local
-  max_update_wait:
-    minutes: 45
-  interval_seconds: 15
-  warning_threshold: 1
-  error_threshold: 2
-
 # tado
 - platform: tado
   username: !secret tado_username
