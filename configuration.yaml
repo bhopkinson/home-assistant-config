@@ -131,6 +131,7 @@ binary_sensor:  !include binary_sensors.yaml
 #light:          !include lights.yaml
 #switch:         !include switches.yaml  
 device_tracker: !include device_tracker.yaml  
+life360:        !include life360.yaml
 
 #group:          !include groups.yaml
 #automation:     !include automations.yaml
