@@ -8,31 +8,47 @@ binary_sensor:
   - platform: mqtt
     name: pickmypostcode_main_winner
     state_topic: "pickmypostcode/drawresult/main/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_survey_winner
     state_topic: "pickmypostcode/drawresult/survey/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_video_winner
     state_topic: "pickmypostcode/drawresult/video/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_stackpot_winner
     state_topic: "pickmypostcode/drawresult/stackpot/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_bonus_five_winner
     state_topic: "pickmypostcode/drawresult/bonus/five/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_bonus_ten_winner
     state_topic: "pickmypostcode/drawresult/bonus/ten/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_bonus_twenty_winner
     state_topic: "pickmypostcode/drawresult/bonus/twenty/winner"
+    payload_on: true
+    payload_off: false
 
   - platform: mqtt
     name: pickmypostcode_mini_winner
     state_topic: "pickmypostcode/drawresult/mini/winner"
+    payload_on: true
+    payload_off: false
