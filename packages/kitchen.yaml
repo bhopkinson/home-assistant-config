@@ -1,0 +1,29 @@
+light:
+  - platform: "mqtt"
+    state_topic: "zigbee2mqtt/kitchen_2"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    color_temp: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/kitchen_2/set"
+
+  - platform: mqtt
+    name: kitchen_2_power
+    command_topic: "shellies/shelly1-E09403/relay/0/command"
+    state_topic: "shellies/shelly1-E09403/relay/0"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+    availability_topic: "shellies/shelly1-E09403/online"
+    payload_available: "true"
+    payload_not_available: "false"
+
+binary_sensor:
+  - platform: mqtt
+    name: kitchen_2_light_switch
+    state_topic: "shellies/shelly1-E09403/input/0"
+    payload_on: "1"
+    payload_off: "0"
+    availability_topic: "shellies/shelly1-E09403/online"
+    payload_available: "true"
+    payload_not_available: "false"
