@@ -4,6 +4,31 @@ sensor:
     state_topic: "pickmypostcode/userinfo"
     value_template: "{{ value_json.user.data.postcode }}"
 
+  - platform: mqtt
+    name: pickmypostcode_main_last_visited
+    state_topic: "pickmypostcode/userinfo"
+    value_template: "{{ value_json.user.data.mainupdated }}"
+
+  - platform: mqtt
+    name: pickmypostcode_survey_last_visited
+    state_topic: "pickmypostcode/userinfo"
+    value_template: "{{ value_json.user.data.surveyupdated }}"
+
+  - platform: mqtt
+    name: pickmypostcode_video_last_visited
+    state_topic: "pickmypostcode/userinfo"
+    value_template: "{{ value_json.user.data.videoupdated }}"
+
+  - platform: mqtt
+    name: pickmypostcode_stackpot_last_visited
+    state_topic: "pickmypostcode/userinfo"
+    value_template: "{{ value_json.user.data.stackpotupdated }}"
+
+  - platform: mqtt
+    name: pickmypostcode_bonus_last_visited
+    state_topic: "pickmypostcode/userinfo"
+    value_template: "{{ value_json.user.data.bonusupdated }}"
+
 binary_sensor:
   - platform: mqtt
     name: pickmypostcode_main_winner
