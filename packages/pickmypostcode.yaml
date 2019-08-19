@@ -29,6 +29,41 @@ sensor:
     state_topic: "pickmypostcode/userinfo"
     value_template: "{{ value_json.user.data.bonusupdated }}"
 
+  - platform: mqtt
+    name: pickmypostcode_main_last_draw
+    state_topic: "pickmypostcode/drawresult/main"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_survey_last_draw
+    state_topic: "pickmypostcode/drawresult/survey"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_video_last_draw
+    state_topic: "pickmypostcode/drawresult/video"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_stackpot_last_draw
+    state_topic: "pickmypostcode/drawresult/stackpot"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_bonus_five_last_draw
+    state_topic: "pickmypostcode/drawresult/bonus/five"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_bonus_ten_last_draw
+    state_topic: "pickmypostcode/drawresult/bonus/ten"
+    value_template: "{{ value_json.dateandtime }}"
+
+  - platform: mqtt
+    name: pickmypostcode_bonus_twenty_last_draw
+    state_topic: "pickmypostcode/drawresult/bonus/twenty"
+    value_template: "{{ value_json.dateandtime }}"
+
 binary_sensor:
   - platform: mqtt
     name: pickmypostcode_main_winner
