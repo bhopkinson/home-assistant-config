@@ -28,6 +28,24 @@ light:
     payload_available: "true"
     payload_not_available: "false"
 
+  - platform: mqtt
+    name: kitchen_colour_temp
+    command_topic: "homeassistant/kitchen_ceiling"
+    color_temp_command_topic: "colour_temp"
+
+switch:
+  - platform: flux
+    lights:
+      - light.kitchen_colour_temp
+    start_time: '15:00'
+    stop_time: '22:00'
+    start_colortemp: 6500
+    sunset_colortemp: 3300
+    stop_colortemp: 2000
+    transition: 0
+    mode: mired
+    disable_brightness_adjust: true
+
 binary_sensor:
   - platform: mqtt
     name: kitchen_2_light_switch
