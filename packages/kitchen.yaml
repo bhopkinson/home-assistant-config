@@ -31,10 +31,11 @@ light:
   - platform: mqtt
     name: kitchen_colour_temp
     command_topic: "homeassistant/kitchen_ceiling"
-    color_temp_command_topic: "colour_temp"
+    color_temp_command_topic: "homeassistant/kitchen_ceiling/colour_temp"
 
 switch:
   - platform: flux
+    name: kitchen_flux
     lights:
       - light.kitchen_colour_temp
     start_time: '15:00'
