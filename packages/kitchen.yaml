@@ -19,19 +19,19 @@ light:
 
   - platform: mqtt
     name: kitchen_2_power
-    command_topic: "shellies/shelly1-E09403/relay/0/command"
-    state_topic: "shellies/shelly1-E09403/relay/0"
+    command_topic: "shellies/shelly1-E09BE6/relay/0/command"
+    state_topic: "shellies/shelly1-E09BE6/relay/0"
     payload_on: "on"
     payload_off: "off"
     retain: true
-    availability_topic: "shellies/shelly1-E09403/online"
+    availability_topic: "shellies/shelly1-E09BE6/online"
     payload_available: "true"
     payload_not_available: "false"
 
   - platform: mqtt
     name: kitchen_colour_temp
-    command_topic: "homeassistant/kitchen_ceiling"
-    color_temp_command_topic: "homeassistant/kitchen_ceiling/colour_temp"
+    command_topic: "homeassistant/kitchen"
+    color_temp_command_topic: "homeassistant/kitchen/colour_temp"
 
 switch:
   - platform: flux
