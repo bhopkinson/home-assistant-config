@@ -9,6 +9,15 @@ light:
     command_topic: "zigbee2mqtt/kitchen_ceiling_2/set"
 
   - platform: "mqtt"
+    name: kitchen_ceiling_1
+    state_topic: "zigbee2mqtt/kitchen_ceiling_1"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    color_temp: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/kitchen_ceiling_1/set"
+
+  - platform: "mqtt"
     name: kitchen_ceiling_2
     state_topic: "zigbee2mqtt/kitchen_ceiling_2"
     availability_topic: "zigbee2mqtt/bridge/state"
