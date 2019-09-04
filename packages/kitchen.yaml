@@ -6,7 +6,7 @@ light:
     brightness: true
     color_temp: true
     schema: "json"
-    command_topic: "zigbee2mqtt/kitchen_ceiling_2/set"
+    command_topic: "zigbee2mqtt/kitchen_ceiling_group/set"
 
   - platform: "mqtt"
     name: kitchen_ceiling_1
