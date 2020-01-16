@@ -1,22 +1,22 @@
 light:
   - platform: mqtt
     name: hall
-    command_topic: "shellies/shelly1-943C58/relay/0/command"
-    state_topic: "shellies/shelly1-943C58/relay/0"
+    command_topic: "shellies/hall-light/relay/0/command"
+    state_topic: "shellies/hall-light/relay/0"
     payload_on: "on"
     payload_off: "off"
     retain: true
-    availability_topic: "shellies/shelly1-943C58/online"
+    availability_topic: "shellies/hall-light/online"
     payload_available: "true"
     payload_not_available: "false"
 
 binary_sensor:
   - platform: mqtt
     name: hall_light_switch
-    state_topic: "shellies/shelly1-943C58/input/0"
+    state_topic: "shellies/hall-light/input/0"
     payload_on: "1"
     payload_off: "0"
-    availability_topic: "shellies/shelly1-943C58/online"
+    availability_topic: "shellies/hall-light/online"
     payload_available: "true"
     payload_not_available: "false"
 
