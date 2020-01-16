@@ -28,12 +28,12 @@ light:
 
   - platform: mqtt
     name: kitchen_2_power
-    command_topic: "shellies/shelly1-E09BE6/relay/0/command"
-    state_topic: "shellies/shelly1-E09BE6/relay/0"
+    command_topic: "shellies/kitchen-light/relay/0/command"
+    state_topic: "shellies/kitchen-light/relay/0"
     payload_on: "on"
     payload_off: "off"
     retain: true
-    availability_topic: "shellies/shelly1-E09BE6/online"
+    availability_topic: "shellies/kitchen-light/online"
     payload_available: "true"
     payload_not_available: "false"
 
@@ -59,16 +59,24 @@ switch:
 binary_sensor:
   - platform: mqtt
     name: kitchen_2_light_switch
-    state_topic: "shellies/shelly1-E09403/input/0"
+    state_topic: "shellies/kitchen-light/input/0"
     payload_on: "1"
     payload_off: "0"
-    availability_topic: "shellies/shelly1-E09403/online"
+    availability_topic: "shellies/kitchen-light/online"
     payload_available: "true"
     payload_not_available: "false"
 
   - platform: "mqtt"
     name: kitchen_motion_1_occupancy
     state_topic: "zigbee2mqtt/kitchen_motion_1/occupancy"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_on: "true"
+    off_delay: 1
+    device_class: "motion"
+
+  - platform: "mqtt"
+    name: kitchen_motion_2_occupancy
+    state_topic: "zigbee2mqtt/kitchen_motion_2/occupancy"
     availability_topic: "zigbee2mqtt/bridge/state"
     payload_on: "true"
     off_delay: 1
@@ -85,6 +93,20 @@ sensor:
   - platform: "mqtt"
     name: kitchen_motion_1_battery
     state_topic: "zigbee2mqtt/kitchen_motion_1/battery"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    unit_of_measurement: "%"
+    device_class: "battery"
+
+  - platform: "mqtt"
+    name: kitchen_motion_2_illuminance
+    state_topic: "zigbee2mqtt/kitchen_motion_2/illuminance"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    unit_of_measurement: "lx"
+    device_class: "illuminance"
+
+  - platform: "mqtt"
+    name: kitchen_motion_2_battery
+    state_topic: "zigbee2mqtt/kitchen_motion_2/battery"
     availability_topic: "zigbee2mqtt/bridge/state"
     unit_of_measurement: "%"
     device_class: "battery"
