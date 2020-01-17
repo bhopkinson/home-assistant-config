@@ -33,6 +33,7 @@ binary_sensor:
     state_topic: "zigbee2mqtt/cloakroom_door/contact"
     availability_topic: "zigbee2mqtt/bridge/state"
     payload_on: "true"
+    payload_off: "false"
 
 sensor:
   - platform: "mqtt"
