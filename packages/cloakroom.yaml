@@ -28,6 +28,12 @@ binary_sensor:
     off_delay: 1
     device_class: "motion"
 
+  - platform: "mqtt"
+    name: cloakroom_door
+    state_topic: "zigbee2mqtt/cloakroom_door/contact"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_on: "true"
+
 sensor:
   - platform: "mqtt"
     name: cloakroom_motion_illuminance
@@ -39,6 +45,13 @@ sensor:
   - platform: "mqtt"
     name: cloakroom_motion_battery
     state_topic: "zigbee2mqtt/cloakroom_motion/battery"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    unit_of_measurement: "%"
+    device_class: "battery"
+
+  - platform: "mqtt"
+    name: cloakroom_door_battery
+    state_topic: "zigbee2mqtt/cloakroom_door/battery"
     availability_topic: "zigbee2mqtt/bridge/state"
     unit_of_measurement: "%"
     device_class: "battery"
