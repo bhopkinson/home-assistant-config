@@ -17,9 +17,9 @@
   icon: mdi:office-building
 
 - name: BTB HQ
-  latitude: 52.244145
-  longitude: -1.390544
-  radius: 50
+  latitude: 52.224367
+  longitude: -1.742777
+  radius: 59
   icon: mdi:dumbbell
 
 - name: The Rookery
@@ -28,8 +28,8 @@
   radius: 100
   icon: mdi:horseshoe
 
-- name: Radway
-  latitude: 52.134311
-  longitude: -1.456080
-  radius: 110
+- name: Yard
+  latitude: 52.193103
+  longitude: -1.525862
+  radius: 350
   icon: mdi:horseshoe
