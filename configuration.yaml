@@ -124,7 +124,8 @@ person:
   - name: Heather
     id: heather
     device_trackers:
-      -  device_tracker.heather
+      - device_tracker.heather
+      - device_tracker.life360_heather
 
 sensor:         !include sensors.yaml
 binary_sensor:  !include binary_sensors.yaml
@@ -137,3 +138,8 @@ life360:        !include life360.yaml
 #automation:     !include automations.yaml
 #script:         !include scripts.yaml
 zone:           !include zones.yaml
+
+#tuya:
+#  username: YOUR_TUYA_USERNAME
+#  password: YOUR_TUYA_PASSWORD
+#  country_code: '44'
