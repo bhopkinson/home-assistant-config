@@ -120,13 +120,20 @@ input_text:
     icon: mdi:lock-outline
 
 switch:
-  - platform: rest
+  # - platform: rest
+  #   name: 'enable_status'
+  #   resource: http://node-red:1880/api/enable/status
+  #   method: PUT
+  #   timeout: 120 # 2 minutes
+  #   body_on: 1
+  #   body_off: 0
+  #   scan_interval: 1800 # 30 minutes
+  #   headers:
+  #     Content-Type: text/plain
+
+  - platform: mqtt
     name: 'enable_status'
-    resource: http://node-red:1880/api/enable/status
-    method: PUT
-    timeout: 120 # 2 minutes
-    body_on: 1
-    body_off: 0
-    scan_interval: 1800 # 30 minutes
-    headers:
-      Content-Type: text/plain
+    state_topic: "enable/status"
+    payload_off: 0
+    payload_on: 1
+    command_topic: "enable/status/set"
