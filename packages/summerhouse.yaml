@@ -25,8 +25,8 @@ binary_sensor:
   - platform: mqtt
     name: summer-house_door
     state_topic: "shellies/summer-house-door/sensor/state"
-    payload_on: "open"
-    payload_off: "close"
+    payload_on: "close"
+    payload_off: "open"
     # availability_topic: "shellies/summer-house-door/online"
     # payload_available: "true"
     # payload_not_available: "false"
