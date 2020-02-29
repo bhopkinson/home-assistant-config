@@ -25,24 +25,30 @@ binary_sensor:
   - platform: mqtt
     name: summer-house_door
     state_topic: "shellies/summer-house-door/sensor/state"
-    availability_topic: "shellies/summer-house-door/online"
     payload_on: "open"
     payload_off: "closed"
+    # availability_topic: "shellies/summer-house-door/online"
+    # payload_available: "true"
+    # payload_not_available: "false"
 
 sensor:
   - platform: mqtt
     name: summer-house_door_illuminance
     state_topic: "shellies/summer-house-door/sensor/lux"
-    availability_topic: "shellies/summer-house-door/online"
     unit_of_measurement: "lx"
     device_class: "illuminance"
+    # availability_topic: "shellies/summer-house-door/online"
+    # payload_available: "true"
+    # payload_not_available: "false"
 
   - platform: mqtt
     name: summer-house_door_battery
     state_topic: "shellies/summer-house-door/sensor/battery"
-    availability_topic: "shellies/summer-house-door/online"
     unit_of_measurement: "%"
     device_class: "battery"
+    # availability_topic: "shellies/summer-house-door/online"
+    # payload_available: "true"
+    # payload_not_available: "false"
 
 #   - platform: mqtt
 #     name: summer-house_internal_light_switch
