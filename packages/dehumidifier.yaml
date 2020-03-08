@@ -1,0 +1,117 @@
+# fan:
+#   - platform: mqtt
+#     name: Dehumidifer
+#     command-topic: "tuya/dehumidifer/power/set"
+#     state_topic: "tuya/dehumidifer/power"
+#     payload_on: "true"
+#     payload_off: "false"
+#     speed_command_topic: "tuya/dehumidifer/fan/set"
+#     speed_state_topic: "tuya/dehumidifer/fan"
+#     payload_high_speed: "High"
+#     payload_medium_speed: "Medium"
+#     payload_low_speed: "Low"
+#     speeds:
+#       - low
+#       - medium
+#       - high
+
+climate:
+  - platform: mqtt
+    name: Dehumidifier
+    action_topic: "tuya/dehumidifer/mode"
+    mode_state_topic: tuya/dehumidifer/mode"
+    mode_command_topic: "tuya/dehumidifer/mode/set"
+    modes:
+      - "auto"
+      - "heat"
+      - "dry"
+      - "fan_only"
+    power_command_topic: "tuya/dehumidifer/power/set"
+    payload_on: "true"
+    payload_off: "false"
+    current_temperature_topic: "tuya/dehumidifer/temperature"
+    temperature_command_topic: "tuya/dehumidifer/temperature_target/set"
+    temperature_state_topic: "tuya/dehumidifer/temperature_target"
+    fan_mode_command_topic: "tuya/dehumidifer/fan/set"
+    fan_mode_state_topic: "tuya/dehumidifer/fan"
+    fan_modes:
+      - "low"
+      - "medium"
+      - "high"
+    max_temp: 30.0
+    min_temp: 15.0
+    precision: 1.0
+
+switch:
+  # - platform: mqtt
+  #   name: Dehumidifer power
+  #   command-topic: "tuya/dehumidifer/power/set"
+  #   payload_off: "false"
+  #   payload_on: "true"
+  #   state-topic: "tuya/dehumidifer/power"
+  #   state_off: "false"
+  #   state_on: "true"
+
+  - platform: mqtt
+    name: Dehumidifer ioniser
+    command-topic: "tuya/dehumidifer/ioniser/set"
+    payload_off: "false"
+    payload_on: "true"
+    state-topic: "tuya/dehumidifer/ioniser"
+    state_off: "false"
+    state_on: "true"
+    availability_topic: "tuya/dehumidifer/power"
+    payload_available: "true"
+    payload_not_available: "false"
+
+  - platform: mqtt
+    name: Dehumidifer UV
+    command-topic: "tuya/dehumidifer/uv/set"
+    payload_off: "false"
+    payload_on: "true"
+    state-topic: "tuya/dehumidifer/uv"
+    state_off: "false"
+    state_on: "true"
+    availability_topic: "tuya/dehumidifer/power"
+    payload_available: "true"
+    payload_not_available: "false"
+
+sensor:
+  - platform: mqtt
+    name: Dehumidifer current humidity
+    device_class: humidity
+    state_topic: "tuya/dehumidifer/humidity"
+    unit_of_measurement: "%"
+    availability_topic: "tuya/dehumidifer/power"
+    payload_available: "true"
+    payload_not_available: "false"
+
+input_number:
+  dehumidifer_target_humidity:
+    min: 35
+    max: 90
+    step: 1
+    mode: box
+    icon: mdi:water-percent
+    unit_of_measurement: "%"
+
+automation:
+  - alias: Dehumdifier - target humdity mqtt
+    trigger:
+      platform: mqtt
+      topic:  "tuya/dehumidifer/humidity_target"
+    action:
+      service: input_number.set_value
+      data_template:
+        entity_id: input_number.dehumidifer_target_humidity
+        value: "{{ trigger.payload }}"
+
+  - alias: Dehumidifer - target humidity set
+    trigger:
+      platform: state
+      entity_id: input_number.dehumidifer_target_humidity
+    action:
+      service: mqtt.publish
+      data_template:
+        topic: "tuya/dehumidifer/humidity_target/set"
+        payload: "{{ states('input_number.dehumidifer_target_humidity') | int }}"
