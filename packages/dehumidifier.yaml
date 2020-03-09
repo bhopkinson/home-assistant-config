@@ -19,7 +19,7 @@ climate:
   - platform: mqtt
     name: Dehumidifier
     action_topic: "tuya/dehumidifer/mode"
-    mode_state_topic: tuya/dehumidifer/mode"
+    mode_state_topic: "tuya/dehumidifer/mode"
     mode_command_topic: "tuya/dehumidifer/mode/set"
     modes:
       - "auto"
@@ -57,7 +57,7 @@ switch:
     command_topic: "tuya/dehumidifer/ioniser/set"
     payload_off: "false"
     payload_on: "true"
-    state-topic: "tuya/dehumidifer/ioniser"
+    state_topic: "tuya/dehumidifer/ioniser"
     state_off: "false"
     state_on: "true"
     availability_topic: "tuya/dehumidifer/power"
@@ -69,7 +69,7 @@ switch:
     command_topic: "tuya/dehumidifer/uv/set"
     payload_off: "false"
     payload_on: "true"
-    state-topic: "tuya/dehumidifer/uv"
+    state_topic: "tuya/dehumidifer/uv"
     state_off: "false"
     state_on: "true"
     availability_topic: "tuya/dehumidifer/power"
