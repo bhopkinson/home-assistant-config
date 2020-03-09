@@ -1,39 +1,22 @@
-# fan:
-#   - platform: mqtt
-#     name: Dehumidifer
-#     command-topic: "tuya/dehumidifer/power/set"
-#     state_topic: "tuya/dehumidifer/power"
-#     payload_on: "true"
-#     payload_off: "false"
-#     speed_command_topic: "tuya/dehumidifer/fan/set"
-#     speed_state_topic: "tuya/dehumidifer/fan"
-#     payload_high_speed: "High"
-#     payload_medium_speed: "Medium"
-#     payload_low_speed: "Low"
-#     speeds:
-#       - low
-#       - medium
-#       - high
-
 climate:
   - platform: mqtt
     name: Dehumidifier
-    action_topic: "tuya/dehumidifer/mode"
-    mode_state_topic: "tuya/dehumidifer/mode"
-    mode_command_topic: "tuya/dehumidifer/mode/set"
+    action_topic: "tuya/dehumidifier/mode"
+    mode_state_topic: "tuya/dehumidifier/mode"
+    mode_command_topic: "tuya/dehumidifier/mode/set"
     modes:
       - "auto"
       - "heat"
       - "dry"
       - "fan_only"
-    power_command_topic: "tuya/dehumidifer/power/set"
+    power_command_topic: "tuya/dehumidifier/power/set"
     payload_on: "true"
     payload_off: "false"
-    current_temperature_topic: "tuya/dehumidifer/temperature"
-    temperature_command_topic: "tuya/dehumidifer/temperature_target/set"
-    temperature_state_topic: "tuya/dehumidifer/temperature_target"
-    fan_mode_command_topic: "tuya/dehumidifer/fan/set"
-    fan_mode_state_topic: "tuya/dehumidifer/fan"
+    current_temperature_topic: "tuya/dehumidifier/temperature"
+    temperature_command_topic: "tuya/dehumidifier/temperature_target/set"
+    temperature_state_topic: "tuya/dehumidifier/temperature_target"
+    fan_mode_command_topic: "tuya/dehumidifier/fan/set"
+    fan_mode_state_topic: "tuya/dehumidifier/fan"
     fan_modes:
       - "low"
       - "medium"
@@ -43,51 +26,42 @@ climate:
     precision: 1.0
 
 switch:
-  # - platform: mqtt
-  #   name: Dehumidifer power
-  #   command-topic: "tuya/dehumidifer/power/set"
-  #   payload_off: "false"
-  #   payload_on: "true"
-  #   state-topic: "tuya/dehumidifer/power"
-  #   state_off: "false"
-  #   state_on: "true"
-
   - platform: mqtt
-    name: Dehumidifer ioniser
-    command_topic: "tuya/dehumidifer/ioniser/set"
+    name: Dehumidifier ioniser
+    command_topic: "tuya/dehumidifier/ioniser/set"
     payload_off: "false"
     payload_on: "true"
-    state_topic: "tuya/dehumidifer/ioniser"
+    state_topic: "tuya/dehumidifier/ioniser"
     state_off: "false"
     state_on: "true"
-    availability_topic: "tuya/dehumidifer/power"
+    availability_topic: "tuya/dehumidifier/power"
     payload_available: "true"
     payload_not_available: "false"
 
   - platform: mqtt
-    name: Dehumidifer UV
-    command_topic: "tuya/dehumidifer/uv/set"
+    name: Dehumidifier UV
+    command_topic: "tuya/dehumidifier/uv/set"
     payload_off: "false"
     payload_on: "true"
-    state_topic: "tuya/dehumidifer/uv"
+    state_topic: "tuya/dehumidifier/uv"
     state_off: "false"
     state_on: "true"
-    availability_topic: "tuya/dehumidifer/power"
+    availability_topic: "tuya/dehumidifier/power"
     payload_available: "true"
     payload_not_available: "false"
 
 sensor:
   - platform: mqtt
-    name: Dehumidifer current humidity
+    name: Dehumidifier current humidity
     device_class: humidity
-    state_topic: "tuya/dehumidifer/humidity"
+    state_topic: "tuya/dehumidifier/humidity"
     unit_of_measurement: "%"
-    availability_topic: "tuya/dehumidifer/power"
+    availability_topic: "tuya/dehumidifier/power"
     payload_available: "true"
     payload_not_available: "false"
 
 input_number:
-  dehumidifer_target_humidity:
+  dehumidifier_target_humidity:
     min: 35
     max: 90
     step: 1
@@ -99,19 +73,19 @@ automation:
   - alias: Dehumdifier - target humdity mqtt
     trigger:
       platform: mqtt
-      topic:  "tuya/dehumidifer/humidity_target"
+      topic:  "tuya/dehumidifier/humidity_target"
     action:
       service: input_number.set_value
       data_template:
-        entity_id: input_number.dehumidifer_target_humidity
+        entity_id: input_number.dehumidifier_target_humidity
         value: "{{ trigger.payload }}"
 
-  - alias: Dehumidifer - target humidity set
+  - alias: Dehumidifier - target humidity set
     trigger:
       platform: state
-      entity_id: input_number.dehumidifer_target_humidity
+      entity_id: input_number.dehumidifier_target_humidity
     action:
       service: mqtt.publish
       data_template:
-        topic: "tuya/dehumidifer/humidity_target/set"
-        payload: "{{ states('input_number.dehumidifer_target_humidity') | int }}"
+        topic: "tuya/dehumidifier/humidity_target/set"
+        payload: "{{ states('input_number.dehumidifier_target_humidity') | int }}"
