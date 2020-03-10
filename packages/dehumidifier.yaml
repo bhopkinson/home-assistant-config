@@ -1,56 +1,87 @@
-climate:
-  - platform: mqtt
-    name: Dehumidifier
-    action_topic: "tuya/dehumidifier/mode"
-    mode_state_topic: "tuya/dehumidifier/mode"
-    mode_command_topic: "tuya/dehumidifier/mode/set"
-    modes:
-      - "off"
-      - "auto"
-      - "heat"
-      - "dry"
-      - "fan_only"
-    power_command_topic: "tuya/dehumidifier/power/set"
-    payload_on: "true"
-    payload_off: "false"
-    current_temperature_topic: "tuya/dehumidifier/temperature"
-    temperature_command_topic: "tuya/dehumidifier/temperature_target/set"
-    temperature_state_topic: "tuya/dehumidifier/temperature_target"
-    fan_mode_command_topic: "tuya/dehumidifier/fan/set"
-    fan_mode_state_topic: "tuya/dehumidifier/fan"
-    fan_modes:
-      - "auto"
-      - "low"
-      - "medium"
-      - "high"
-    max_temp: 30.0
-    min_temp: 15.0
-    precision: 1.0
+# climate:
+#   - platform: mqtt
+#     name: Dehumidifier
+#     action_topic: "tuya/dehumidifier/mode"
+#     mode_state_topic: "tuya/dehumidifier/mode"
+#     mode_command_topic: "tuya/dehumidifier/mode/set"
+#     modes:
+#       - "off"
+#       - "auto"
+#       - "heat"
+#       - "dry"
+#       - "fan_only"
+#     power_command_topic: "tuya/dehumidifier/power/set"
+#     payload_on: "true"
+#     payload_off: "false"
+#     current_temperature_topic: "tuya/dehumidifier/temperature"
+#     temperature_command_topic: "tuya/dehumidifier/temperature_target/set"
+#     temperature_state_topic: "tuya/dehumidifier/temperature_target"
+#     fan_mode_command_topic: "tuya/dehumidifier/fan/set"
+#     fan_mode_state_topic: "tuya/dehumidifier/fan"
+#     fan_modes:
+#       - "auto"
+#       - "low"
+#       - "medium"
+#       - "high"
+#     max_temp: 30.0
+#     min_temp: 15.0
+#     precision: 1.0
+
+# switch:
+#   - platform: mqtt
+#     name: Dehumidifier ioniser
+#     command_topic: "tuya/dehumidifier/ioniser/set"
+#     payload_off: "false"
+#     payload_on: "true"
+#     state_topic: "tuya/dehumidifier/ioniser"
+#     state_off: "false"
+#     state_on: "true"
+#     availability_topic: "tuya/dehumidifier/power"
+#     payload_available: "true"
+#     payload_not_available: "false"
+
+#   - platform: mqtt
+#     name: Dehumidifier UV
+#     command_topic: "tuya/dehumidifier/uv/set"
+#     payload_off: "false"
+#     payload_on: "true"
+#     state_topic: "tuya/dehumidifier/uv"
+#     state_off: "false"
+#     state_on: "true"
+#     availability_topic: "tuya/dehumidifier/power"
+#     payload_available: "true"
+#     payload_not_available: "false"
 
 switch:
   - platform: mqtt
+    name: Dehumidifer power
+    state_topic: "tuya/dehumidifier/power"
+    command_topic: "tuya/dehumidifier/power/set"
+    payload_on: "true"
+    payload_off: "false"
+    icon: mdi:power
+
+  - platform: mqtt
     name: Dehumidifier ioniser
+    state_topic: "tuya/dehumidifier/ioniser"
     command_topic: "tuya/dehumidifier/ioniser/set"
     payload_off: "false"
     payload_on: "true"
-    state_topic: "tuya/dehumidifier/ioniser"
-    state_off: "false"
-    state_on: "true"
     availability_topic: "tuya/dehumidifier/power"
     payload_available: "true"
     payload_not_available: "false"
+    icon: mdi:atom-variant
 
   - platform: mqtt
     name: Dehumidifier UV
+    state_topic: "tuya/dehumidifier/uv"
     command_topic: "tuya/dehumidifier/uv/set"
     payload_off: "false"
     payload_on: "true"
-    state_topic: "tuya/dehumidifier/uv"
-    state_off: "false"
-    state_on: "true"
     availability_topic: "tuya/dehumidifier/power"
     payload_available: "true"
     payload_not_available: "false"
+    icon: mdi:air-filter
 
 sensor:
   - platform: mqtt
@@ -63,6 +94,32 @@ sensor:
     payload_not_available: "false"
     force_update: true
 
+  - platform: mqtt
+    name: Dehumidifier current temperature
+    device_class: temperature
+    state_topic: "tuya/dehumidifier/temperature"
+    unit_of_measurement: "°C"
+    availability_topic: "tuya/dehumidifier/power"
+    payload_available: "true"
+    payload_not_available: "false"
+    force_update: true
+
+input_selet:
+  dehumidifier_fan:
+    options:
+      - Sleep
+      - Normal
+      - Turbo
+    icon: mdi:fan
+
+  dehumidifier_mode:
+    options:
+      - Smart
+      - Air purifier
+      - Heater
+      - Dehumidifier
+    icon: mdi:air-humidifier
+
 input_number:
   dehumidifier_target_humidity:
     min: 35
@@ -72,11 +129,28 @@ input_number:
     icon: mdi:water-percent
     unit_of_measurement: "%"
 
+  dehumidifier_target_temperature:
+    min: 15
+    max: 30
+    step: 1
+    mode: box
+    icon: mdi:water-percent
+    unit_of_measurement: "%"
+
 automation:
+  - alias: Dehumidifer - mode mqtt
+    trigger:
+      platform: mqtt
+      topic: "tuya/dehumidifier/mode"
+    action:
+      service: input_select.set_value
+      data_template:
+        entity_id: 
+
   - alias: Dehumdifier - target humdity mqtt
     trigger:
       platform: mqtt
-      topic:  "tuya/dehumidifier/humidity_target"
+      topic: "tuya/dehumidifier/humidity_target"
     action:
       service: input_number.set_value
       data_template:
