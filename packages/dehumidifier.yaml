@@ -104,7 +104,7 @@ sensor:
     payload_not_available: "false"
     force_update: true
 
-input_selet:
+input_select:
   dehumidifier_fan:
     options:
       - Sleep
