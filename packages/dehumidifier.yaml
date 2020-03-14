@@ -107,6 +107,7 @@ sensor:
 input_select:
   dehumidifier_fan:
     options:
+      - Auto
       - Sleep
       - Normal
       - Turbo
@@ -137,32 +138,32 @@ input_number:
     icon: mdi:thermometer
     unit_of_measurement: "%"
 
-automation:
-  - alias: Dehumidifer - mode mqtt
-    trigger:
-      platform: mqtt
-      topic: "tuya/dehumidifier/mode"
-    action:
-      service: input_select.set_value
-      data_template:
-        entity_id: 
+# automation:
+#   - alias: Dehumidifer - mode mqtt
+#     trigger:
+#       platform: mqtt
+#       topic: "tuya/dehumidifier/mode"
+#     action:
+#       service: input_select.set_value
+#       data_template:
+#         entity_id: 
 
-  - alias: Dehumdifier - target humdity mqtt
-    trigger:
-      platform: mqtt
-      topic: "tuya/dehumidifier/humidity_target"
-    action:
-      service: input_number.set_value
-      data_template:
-        entity_id: input_number.dehumidifier_target_humidity
-        value: "{{ trigger.payload }}"
+#   - alias: Dehumdifier - target humdity mqtt
+#     trigger:
+#       platform: mqtt
+#       topic: "tuya/dehumidifier/humidity_target"
+#     action:
+#       service: input_number.set_value
+#       data_template:
+#         entity_id: input_number.dehumidifier_target_humidity
+#         value: "{{ trigger.payload }}"
 
-  - alias: Dehumidifier - target humidity set
-    trigger:
-      platform: state
-      entity_id: input_number.dehumidifier_target_humidity
-    action:
-      service: mqtt.publish
-      data_template:
-        topic: "tuya/dehumidifier/humidity_target/set"
-        payload: "{{ states('input_number.dehumidifier_target_humidity') | int }}"
+#   - alias: Dehumidifier - target humidity set
+#     trigger:
+#       platform: state
+#       entity_id: input_number.dehumidifier_target_humidity
+#     action:
+#       service: mqtt.publish
+#       data_template:
+#         topic: "tuya/dehumidifier/humidity_target/set"
+#         payload: "{{ states('input_number.dehumidifier_target_humidity') | int }}"
