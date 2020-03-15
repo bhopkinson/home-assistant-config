@@ -107,10 +107,10 @@ sensor:
 input_select:
   dehumidifier_fan:
     options:
-      - Auto
       - Sleep
       - Normal
       - Turbo
+      - Auto (Smart)
     icon: mdi:fan
 
   dehumidifier_mode:
