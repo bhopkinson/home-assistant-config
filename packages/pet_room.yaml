@@ -1,0 +1,36 @@
+light:
+  - platform: "mqtt"
+    name: pet_room_light
+    state_topic: "zigbee2mqtt/pet_room_light"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    color_temp: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/pet_room_light/set"
+
+  - platform: mqtt
+    name: pet_room_colour_temp
+    command_topic: "homeassistant/pet_room"
+    color_temp_command_topic: "homeassistant/pet_room/colour_temp"
+
+switch:
+  - platform: flux
+    name: pet_room_flux
+    lights:
+      - light.pet_room_colour_temp
+    start_time: '15:00'
+    stop_time: '22:00'
+    start_colortemp: 6500
+    sunset_colortemp: 2900
+    stop_colortemp: 1800
+    transition: 0
+    mode: mired
+    disable_brightness_adjust: true
+
+# sensor:
+#   - platform: "mqtt"
+#     state_topic: "zigbee2mqtt/pet_room_light"
+#     availability_topic: "zigbee2mqtt/bridge/state"
+#     icon: "mdi:signal"
+#     unit_of_measurement: "lqi"
+#     value_template: "{{ value_json.linkquality }}"
