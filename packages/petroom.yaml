@@ -2,7 +2,7 @@ light:
   - platform: "mqtt"
     name: pet_room_light
     state_topic: "zigbee2mqtt/pet_room_light"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/pet_room_light/availability"
     brightness: true
     color_temp: true
     schema: "json"
@@ -31,7 +31,7 @@ binary_sensor:
   - platform: "mqtt"
     name: pet_room_motion_occupancy
     state_topic: "zigbee2mqtt/pet_room_motion/occupancy"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
     payload_on: "true"
     off_delay: 1
     device_class: "motion"
@@ -40,21 +40,21 @@ sensor:
   - platform: "mqtt"
     name: pet_room_motion_illuminance
     state_topic: "zigbee2mqtt/pet_room_motion/illuminance"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
     unit_of_measurement: "lx"
     device_class: "illuminance"
 
   - platform: "mqtt"
     name: pet_room_motion_battery
     state_topic: "zigbee2mqtt/pet_room_motion/battery"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
     unit_of_measurement: "%"
     device_class: "battery"
 
 # sensor:
 #   - platform: "mqtt"
 #     state_topic: "zigbee2mqtt/pet_room_light"
-#     availability_topic: "zigbee2mqtt/bridge/state"
+#     availability_topic: "zigbee2mqtt/pet_room_light/availability"
 #     icon: "mdi:signal"
 #     unit_of_measurement: "lqi"
 #     value_template: "{{ value_json.linkquality }}"
