@@ -1,7 +1,7 @@
 light:
   - platform: "mqtt"
     name: pet_room_light
-    state_topic: "zigbee2mqtt/pet_room_light"
+    state_topic: "zigbee2mqtt/pet_room_light/ha_state"
     availability_topic: "zigbee2mqtt/pet_room_light/availability"
     brightness: true
     color_temp: true
