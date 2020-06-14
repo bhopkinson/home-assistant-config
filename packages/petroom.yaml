@@ -29,25 +29,47 @@ switch:
 
 binary_sensor:
   - platform: "mqtt"
-    name: pet_room_motion_occupancy
-    state_topic: "zigbee2mqtt/pet_room_motion/occupancy"
-    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
+    name: pet_room_motion_1_occupancy
+    state_topic: "zigbee2mqtt/pet_room_motion_1/occupancy"
+    availability_topic: "zigbee2mqtt/pet_room_motion_1/availability"
+    payload_on: "true"
+    off_delay: 1
+    device_class: "motion"
+
+  - platform: "mqtt"
+    name: pet_room_motion_2_occupancy
+    state_topic: "zigbee2mqtt/pet_room_motion_2/occupancy"
+    availability_topic: "zigbee2mqtt/pet_room_motion_2/availability"
     payload_on: "true"
     off_delay: 1
     device_class: "motion"
 
 sensor:
   - platform: "mqtt"
-    name: pet_room_motion_illuminance
-    state_topic: "zigbee2mqtt/pet_room_motion/illuminance"
-    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
+    name: pet_room_motion_1_illuminance
+    state_topic: "zigbee2mqtt/pet_room_motion_1/illuminance"
+    availability_topic: "zigbee2mqtt/pet_room_motion_1/availability"
     unit_of_measurement: "lx"
     device_class: "illuminance"
 
   - platform: "mqtt"
-    name: pet_room_motion_battery
-    state_topic: "zigbee2mqtt/pet_room_motion/battery"
-    availability_topic: "zigbee2mqtt/pet_room_motion/availability"
+    name: pet_room_motion_1_battery
+    state_topic: "zigbee2mqtt/pet_room_motion_1/battery"
+    availability_topic: "zigbee2mqtt/pet_room_motion_1/availability"
+    unit_of_measurement: "%"
+    device_class: "battery"
+
+  - platform: "mqtt"
+    name: pet_room_motion_2_illuminance
+    state_topic: "zigbee2mqtt/pet_room_motion_2/illuminance"
+    availability_topic: "zigbee2mqtt/pet_room_motion_2/availability"
+    unit_of_measurement: "lx"
+    device_class: "illuminance"
+
+  - platform: "mqtt"
+    name: pet_room_motion_2_battery
+    state_topic: "zigbee2mqtt/pet_room_motion_2/battery"
+    availability_topic: "zigbee2mqtt/pet_room_motion_2/availability"
     unit_of_measurement: "%"
     device_class: "battery"
 
