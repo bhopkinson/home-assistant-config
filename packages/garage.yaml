@@ -1,0 +1,21 @@
+light:
+  - platform: mqtt
+    name: garage
+    command_topic: "shellies/garage-light/relay/0/command"
+    state_topic: "shellies/garage-light/relay/0"
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+    availability_topic: "shellies/garage-light/online"
+    payload_available: "true"
+    payload_not_available: "false"
+
+binary_sensor:
+  - platform: mqtt
+    name: garage_light_switch
+    state_topic: "shellies/garage-light/input/0"
+    payload_on: "1"
+    payload_off: "0"
+    availability_topic: "shellies/garage-light/online"
+    payload_available: "true"
+    payload_not_available: "false"
