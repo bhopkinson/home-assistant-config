@@ -19,3 +19,17 @@ binary_sensor:
     availability_topic: "shellies/garage-light/online"
     payload_available: "true"
     payload_not_available: "false"
+
+  - platform: mqtt
+    name: garage_side_door
+    state_topic: "shellies/garage-side-door/sensor/state"
+    payload_on: "open"
+    payload_off: "close"
+    device_class: "door"
+
+sensor:
+  - platform: mqtt
+    name: garage_side_door_battery
+    state_topic: "shellies/garage-side-door/sensor/battery"
+    unit_of_measurement: "%"
+    device_class: "battery"
