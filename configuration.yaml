@@ -19,16 +19,13 @@ homeassistant:
 # Show links to resources in log and frontend
 #introduction:
 
+# https://www.home-assistant.io/integrations/default_config/
+default_config:
+
 logger:
   default: debug
   logs:
     homeassistant.components.tado: warn
-
-# Enables the frontend
-frontend:
-
-# Enables configuration UI
-config:
 
 # https://github.com/custom-components/custom_updater
 custom_updater:
@@ -50,9 +47,6 @@ updater:
 
 # Discover some devices automatically
 # discovery:
-
-# System Health
-system_health:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -98,18 +92,12 @@ influxdb:
   tags:
     source: ha
 
-# Enables a map showing the location of tracked devices
-map:
-
-# Track the sun
-sun:
-
 # Text to speech
 # tts:
 #   - platform: google_translate
 
 # Cloud
-cloud:
+#cloud:
 
 tado:
   username:     !secret tado_username
