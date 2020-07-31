@@ -28,3 +28,18 @@ sensor:
     availability_topic: "zigbee2mqtt/back_garden_motion_1/availability"
     unit_of_measurement: "%"
     device_class: "battery"
+
+light:
+  - platform: "mqtt"
+    name: driveway_corner_light
+    brightness: true
+    schema: "template"
+    command_topic: "shellies/driveway-corner-light/light/0/command"
+    state_topic: "shellies/driveway-corner-light/light/0/status"
+    state_template: ""
+    # payload_on: "on"
+    # payload_off: "off"
+    retain: true
+    availability_topic: "shellies/driveway-corner-light/online"
+    payload_available: "true"
+    payload_not_available: "false"
