@@ -28,3 +28,70 @@ sensor:
     availability_topic: "zigbee2mqtt/back_garden_motion_1/availability"
     unit_of_measurement: "%"
     device_class: "battery"
+
+light:
+  - platform: "mqtt"
+    name: driveway_corner_light
+    schema: "template"
+    command_topic: "shellies/driveway-corner-light/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
+    state_topic: "shellies/driveway-corner-light/light/0/status"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
+    retain: true
+    availability_topic: "shellies/driveway-corner-light/online"
+    payload_available: "true"
+    payload_not_available: "false"
+    
+  - platform: "mqtt"
+    name: back_garden_wall_light_1
+    schema: "template"
+    command_topic: "shellies/back-garden-wall-light-1/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
+    state_topic: "shellies/back-garden-wall-light-1/light/0/status"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
+    retain: true
+    availability_topic: "shellies/back-garden-wall-light-1/online"
+    payload_available: "true"
+    payload_not_available: "false"
+
+  - platform: "mqtt"
+    name: back_garden_wall_light_2
+    schema: "template"
+    command_topic: "shellies/back-garden-wall-light-2/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
+    state_topic: "shellies/back-garden-wall-light-2/light/0/status"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
+    retain: true
+    availability_topic: "shellies/back-garden-wall-light-2/online"
+    payload_available: "true"
+    payload_not_available: "false"
