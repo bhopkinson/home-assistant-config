@@ -32,7 +32,6 @@ sensor:
 light:
   - platform: "mqtt"
     name: driveway_corner_light
-    brightness: true
     schema: "template"
     command_topic: "shellies/driveway-corner-light/light/0/set"
     command_off_template: >
@@ -56,7 +55,6 @@ light:
     
   - platform: "mqtt"
     name: back_garden_wall_light_1
-    brightness: true
     schema: "template"
     command_topic: "shellies/back-garden-wall-light-1/light/0/set"
     command_off_template: >
@@ -80,7 +78,6 @@ light:
 
   - platform: "mqtt"
     name: back_garden_wall_light_2
-    brightness: true
     schema: "template"
     command_topic: "shellies/back-garden-wall-light-2/light/0/set"
     command_off_template: >
