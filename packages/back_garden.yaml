@@ -48,10 +48,9 @@ light:
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
     retain: true
-    availability:
-      - topic: "shellies/driveway-corner-light/online"
-        payload_available: "true"
-        payload_not_available: "false"
+    availability_topic: "shellies/driveway-corner-light/online"
+    payload_available: "true"
+    payload_not_available: "false"
     
   - platform: "mqtt"
     name: back_garden_wall_light_1
@@ -71,10 +70,9 @@ light:
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
     retain: true
-    availability:
-      - topic: "shellies/back-garden-wall-light-1/online"
-        payload_available: "true"
-        payload_not_available: "false"
+    availability_topic: "shellies/back-garden-wall-light-1/online"
+    payload_available: "true"
+    payload_not_available: "false"
 
   - platform: "mqtt"
     name: back_garden_wall_light_2
@@ -94,7 +92,6 @@ light:
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
     retain: true
-    availability:
-      - topic: "shellies/back-garden-wall-light-2/online"
-        payload_available: "true"
-        payload_not_available: "false"
+    availability_topic: "shellies/back-garden-wall-light-2/online"
+    payload_available: "true"
+    payload_not_available: "false"
