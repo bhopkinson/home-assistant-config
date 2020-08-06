@@ -34,12 +34,70 @@ light:
     name: driveway_corner_light
     brightness: true
     schema: "template"
-    command_topic: "shellies/driveway-corner-light/light/0/command"
+    command_topic: "shellies/driveway-corner-light/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
     state_topic: "shellies/driveway-corner-light/light/0/status"
-    state_template: ""
-    # payload_on: "on"
-    # payload_off: "off"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
     retain: true
-    availability_topic: "shellies/driveway-corner-light/online"
-    payload_available: "true"
-    payload_not_available: "false"
+    availability:
+      - topic: "shellies/driveway-corner-light/online"
+        payload_available: "true"
+        payload_not_available: "false"
+    
+  - platform: "mqtt"
+    name: back_garden_wall_light_1
+    brightness: true
+    schema: "template"
+    command_topic: "shellies/back-garden-wall-light-1/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
+    state_topic: "shellies/back-garden-wall-light-1/light/0/status"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
+    retain: true
+    availability:
+      - topic: "shellies/back-garden-wall-light-1/online"
+        payload_available: "true"
+        payload_not_available: "false"
+
+  - platform: "mqtt"
+    name: back_garden_wall_light_2
+    brightness: true
+    schema: "template"
+    command_topic: "shellies/back-garden-wall-light-2/light/0/set"
+    command_off_template: >
+      {
+        "brightness": 0,
+        "turn": "off"
+      }
+    command_on_template: >
+      {
+        "brightness": {{ brightness or 100 }},
+        "turn": "on"
+      }
+    state_topic: "shellies/back-garden-wall-light-2/light/0/status"
+    state_template: "{{ 'on' if value_json.ison else 'off' }}"
+    brightness_template: "{{ value_json.brightness }}"
+    retain: true
+    availability:
+      - topic: "shellies/back-garden-wall-light-2/online"
+        payload_available: "true"
+        payload_not_available: "false"
