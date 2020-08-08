@@ -47,6 +47,7 @@ light:
     state_topic: "shellies/driveway-corner-light/light/0/status"
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
+    brightness_scale: 100
     retain: true
     availability_topic: "shellies/driveway-corner-light/online"
     payload_available: "true"
@@ -69,6 +70,7 @@ light:
     state_topic: "shellies/back-garden-wall-light-1/light/0/status"
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
+    brightness_scale: 100
     retain: true
     availability_topic: "shellies/back-garden-wall-light-1/online"
     payload_available: "true"
@@ -91,6 +93,7 @@ light:
     state_topic: "shellies/back-garden-wall-light-2/light/0/status"
     state_template: "{{ 'on' if value_json.ison else 'off' }}"
     brightness_template: "{{ value_json.brightness }}"
+    brightness_scale: 100
     retain: true
     availability_topic: "shellies/back-garden-wall-light-2/online"
     payload_available: "true"
