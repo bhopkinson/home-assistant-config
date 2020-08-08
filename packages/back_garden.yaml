@@ -41,7 +41,7 @@ light:
       }
     command_on_template: >
       {
-        "brightness": {{ (brightness or 255) / 255 * 100 }},
+        "brightness": {{ ((brightness or 255) / 255 * 100) | round(0, 'ceil') | int }},
         "turn": "on"
       }
     state_topic: "shellies/driveway-corner-light/light/0/status"
@@ -63,7 +63,7 @@ light:
       }
     command_on_template: >
       {
-        "brightness": {{ (brightness or 255) / 255 * 100 }},
+        "brightness": {{ ((brightness or 255) / 255 * 100) | round(0, 'ceil') | int }},
         "turn": "on"
       }
     state_topic: "shellies/back-garden-wall-light-1/light/0/status"
@@ -85,7 +85,7 @@ light:
       }
     command_on_template: >
       {
-        "brightness": {{ (brightness or 255) / 255 * 100 }},
+        "brightness": {{ ((brightness or 255) / 255 * 100) | round(0, 'ceil') | int }},
         "turn": "on"
       }
     state_topic: "shellies/back-garden-wall-light-2/light/0/status"
