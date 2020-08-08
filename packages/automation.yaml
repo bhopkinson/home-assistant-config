@@ -7,4 +7,4 @@ automation:
     - service: mqtt.publish
       data_template:
         topic: 'homeassistant/started'
-        payload: {{ now() }}
+        payload: "{{ now() }}"
