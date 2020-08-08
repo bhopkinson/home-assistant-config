@@ -57,10 +57,10 @@ mqtt:
   port: 1883
   client_id: homeassistant
   birth_message:
-    topic: 'orchardhouse/homeassistant/status'
+    topic: 'homeassistant/status'
     payload: 'online'
   will_message:
-    topic: 'orchardhouse/homeassistant/status'
+    topic: 'homeassistant/status'
     payload: 'offline'
 
 # ZWave
