@@ -1,0 +1,10 @@
+automation:
+- alias: Startup MQTT message
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: 'homeassistant/started'
+        payload: {{ now() }}
