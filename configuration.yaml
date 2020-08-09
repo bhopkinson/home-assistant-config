@@ -129,3 +129,14 @@ zone:           !include zones.yaml
 #  username: YOUR_TUYA_USERNAME
 #  password: YOUR_TUYA_PASSWORD
 #  country_code: '44'
+
+# circadian_lighting:
+#   min_colortemp: 2200
+#   max_colortemp: 6500
+#   sunrise_time: 06:00:00
+#   interval: 60
+#   transition: 20
+# switch:
+#   - platform: circadian_lighting
+#     lights_ct:
+#       - light.desk
