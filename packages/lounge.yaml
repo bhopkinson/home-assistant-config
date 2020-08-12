@@ -1,0 +1,8 @@
+switch:
+  - platform: "mqtt"
+    state_topic: "zigbee2mqtt/lounge_shelf_lights"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_off: "OFF"
+    payload_on: "ON"
+    value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/lounge_shelf_lights/set"
