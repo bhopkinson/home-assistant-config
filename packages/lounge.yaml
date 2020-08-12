@@ -1,5 +1,11 @@
+light:
+  - platform: switch
+    name: lounge_shelf_lights
+    entity_id: switch.lounge_shelf_lights
+
 switch:
   - platform: "mqtt"
+    name: lounge_shelf_lights
     state_topic: "zigbee2mqtt/lounge_shelf_lights"
     availability_topic: "zigbee2mqtt/bridge/state"
     payload_off: "OFF"
