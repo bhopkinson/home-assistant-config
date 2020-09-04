@@ -35,6 +35,8 @@ http:
   # api_password: !secret http_password
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   # base_url: example.duckdns.org:8123
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -74,7 +76,7 @@ history:
 logbook:
 
 # Use InfluxDB
-influxdb: 
+influxdb:
   host: influxdb
   include:
     domains:
@@ -96,29 +98,18 @@ tado:
   username:     !secret tado_username
   password:     !secret tado_password
 
-person:
-  - name: Brad
-    id: brad
-    device_trackers:
-      - device_tracker.brad
-      - device_tracker.life360_brad
-  - name: Heather
-    id: heather
-    device_trackers:
-      - device_tracker.heather
-      - device_tracker.life360_heather
-
 sensor:         !include sensors.yaml
 binary_sensor:  !include binary_sensors.yaml
 #light:          !include lights.yaml
-#switch:         !include switches.yaml  
-device_tracker: !include device_tracker.yaml  
-life360:        !include life360.yaml
+#switch:         !include switches.yaml
+#device_tracker: !include device_tracker.yaml
+#life360:        !include life360.yaml
+#person:         !include person.yaml
 
 #group:          !include groups.yaml
 #automation:     !include automations.yaml
 #script:         !include scripts.yaml
-zone:           !include zones.yaml
+#zone:           !include zones.yaml
 
 #tuya:
 #  username: YOUR_TUYA_USERNAME

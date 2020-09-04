@@ -1,0 +1,67 @@
+person:
+  - name: Brad
+    id: brad
+    device_trackers:
+      - device_tracker.brad
+      - device_tracker.life360_brad
+  - name: Heather
+    id: heather
+    device_trackers:
+      - device_tracker.heather
+      - device_tracker.life360_heather
+
+device_tracker:
+  - platform: tado
+    username: !secret tado_username
+    password: !secret tado_password
+    home_id: !secret tado_home_id
+
+life360:
+  accounts:
+    username: !secret life360_username
+    password: !secret life360_password
+  prefix: life360
+  driving_speed: 18
+  max_gps_accuracy: 200
+  max_update_wait:
+    minutes: 45
+  interval_seconds: 15
+  warning_threshold: 2
+  error_threshold: 3
+
+zone:
+  - name: Home
+    latitude: !secret latitude
+    longitude: !secret longitude
+    radius: 36
+    icon: mdi:home
+
+  - name: Enable
+    latitude: 52.201502
+    longitude: -1.724378
+    radius: 50
+    icon: mdi:office-building
+
+  - name: Moreton Morrell College
+    latitude: 52.196800
+    longitude: -1.558122
+    radius: 600
+    icon: mdi:school
+
+  - name: Gym
+    latitude: 52.224367
+    longitude: -1.742777
+    radius: 59
+    icon: mdi:dumbbell
+
+  - name: The Rookery
+    latitude: 52.135507
+    longitude: -1.612324
+    radius: 100
+    icon: mdi:horseshoe
+
+  - name: Yard
+    latitude: 52.193103
+    longitude: -1.525862
+    radius: 350
+    icon: mdi:horseshoe
