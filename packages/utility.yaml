@@ -56,6 +56,14 @@ binary_sensor:
     off_delay: 1
     device_class: "motion"
 
+  - platform: "mqtt"
+    name: back_door
+    state_topic: "zigbee2mqtt/back_door/contact"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_on: "false"
+    payload_off: "true"
+    device_class: "door"
+
 sensor:
   - platform: "mqtt"
     name: utility_motion_illuminance
@@ -67,6 +75,13 @@ sensor:
   - platform: "mqtt"
     name: utility_motion_battery
     state_topic: "zigbee2mqtt/utility_motion/battery"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    unit_of_measurement: "%"
+    device_class: "battery"
+
+  - platform: "mqtt"
+    name: back_door_battery
+    state_topic: "zigbee2mqtt/back_door/battery"
     availability_topic: "zigbee2mqtt/bridge/state"
     unit_of_measurement: "%"
     device_class: "battery"
