@@ -1,2 +1,13 @@
 - platform: workday
   country: England
+
+- platform: template
+  sensors:
+    nighttime:
+      friendly_name: 'nighttime'
+      value_template: >-
+        {% if (states.sun.sun.attributes.elevation) < -4 %}
+          true
+        {% else %}
+          false
+        {% endif %}
