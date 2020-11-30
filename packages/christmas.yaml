@@ -1,0 +1,14 @@
+light:
+  - platform: switch
+    name: christmas_tree_lights
+    entity_id: switch.christmas_tree_lights
+
+switch:
+  - platform: "mqtt"
+    name: christmas_tree_lights
+    state_topic: "zigbee2mqtt/christmas_tree_lights"
+    availability_topic: "zigbee2mqtt/bridge/state"
+    payload_off: "OFF"
+    payload_on: "ON"
+    value_template: "{{ value_json.state }}"
+    command_topic: "zigbee2mqtt/christmas_tree_lights/set"
