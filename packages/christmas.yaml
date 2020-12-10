@@ -11,7 +11,7 @@ switch:
   - platform: "mqtt"
     name: christmas_tree_lights
     state_topic: "zigbee2mqtt/christmas_tree_lights"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/christmas_tree_lights/availability"
     payload_off: "OFF"
     payload_on: "ON"
     value_template: "{{ value_json.state }}"
@@ -20,7 +20,7 @@ switch:
   - platform: "mqtt"
     name: christmas_candle_bridge
     state_topic: "zigbee2mqtt/christmas_candle_bridge"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/christmas_candle_bridge/availability"
     payload_off: "OFF"
     payload_on: "ON"
     value_template: "{{ value_json.state }}"

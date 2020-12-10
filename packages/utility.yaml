@@ -51,7 +51,7 @@ binary_sensor:
   - platform: "mqtt"
     name: utility_motion_occupancy
     state_topic: "zigbee2mqtt/utility_motion/occupancy"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/utility_motion/availability"
     payload_on: "true"
     off_delay: 1
     device_class: "motion"
@@ -59,7 +59,7 @@ binary_sensor:
   - platform: "mqtt"
     name: back_door
     state_topic: "zigbee2mqtt/back_door/contact"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/back_door/availability"
     payload_on: "false"
     payload_off: "true"
     device_class: "door"
@@ -68,20 +68,20 @@ sensor:
   - platform: "mqtt"
     name: utility_motion_illuminance
     state_topic: "zigbee2mqtt/utility_motion/illuminance"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/utility_motion/availability"
     unit_of_measurement: "lx"
     device_class: "illuminance"
 
   - platform: "mqtt"
     name: utility_motion_battery
     state_topic: "zigbee2mqtt/utility_motion/battery"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/utility_motion/availability"
     unit_of_measurement: "%"
     device_class: "battery"
 
   - platform: "mqtt"
     name: back_door_battery
     state_topic: "zigbee2mqtt/back_door/battery"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/back_door/availability"
     unit_of_measurement: "%"
     device_class: "battery"

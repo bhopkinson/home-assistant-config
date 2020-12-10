@@ -11,7 +11,7 @@ light:
   - platform: "mqtt"
     name: kitchen_ceiling_1
     state_topic: "zigbee2mqtt/kitchen_ceiling_1"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_ceiling_1/availability"
     brightness: true
     color_temp: true
     schema: "json"
@@ -20,7 +20,7 @@ light:
   - platform: "mqtt"
     name: kitchen_ceiling_2
     state_topic: "zigbee2mqtt/kitchen_ceiling_2"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_ceiling_2/availability"
     brightness: true
     color_temp: true
     schema: "json"
@@ -49,7 +49,7 @@ binary_sensor:
   - platform: "mqtt"
     name: kitchen_motion_1_occupancy
     state_topic: "zigbee2mqtt/kitchen_motion_1/occupancy"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_1/availability"
     payload_on: "true"
     off_delay: 1
     device_class: "motion"
@@ -57,7 +57,7 @@ binary_sensor:
   - platform: "mqtt"
     name: kitchen_motion_2_occupancy
     state_topic: "zigbee2mqtt/kitchen_motion_2/occupancy"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_2/availability"
     payload_on: "true"
     off_delay: 1
     device_class: "motion"
@@ -66,40 +66,40 @@ sensor:
   - platform: "mqtt"
     name: kitchen_motion_1_illuminance
     state_topic: "zigbee2mqtt/kitchen_motion_1/illuminance"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_1/availability"
     unit_of_measurement: "lx"
     device_class: "illuminance"
 
   - platform: "mqtt"
     name: kitchen_motion_1_battery
     state_topic: "zigbee2mqtt/kitchen_motion_1/battery"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_1/availability"
     unit_of_measurement: "%"
     device_class: "battery"
 
   - platform: "mqtt"
     name: kitchen_motion_2_illuminance
     state_topic: "zigbee2mqtt/kitchen_motion_2/illuminance"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_2/availability"
     unit_of_measurement: "lx"
     device_class: "illuminance"
 
   - platform: "mqtt"
     name: kitchen_motion_2_battery
     state_topic: "zigbee2mqtt/kitchen_motion_2/battery"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_motion_2/availability"
     unit_of_measurement: "%"
     device_class: "battery"
 
   - platform: "mqtt"
     state_topic: "zigbee2mqtt/kitchen_dimmer"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_dimmer/availability"
     icon: "mdi:gesture-double-tap"
     value_template: "{{ value_json.action }}"
 
   - platform: "mqtt"
     state_topic: "zigbee2mqtt/kitchen_dimmer"
-    availability_topic: "zigbee2mqtt/bridge/state"
+    availability_topic: "zigbee2mqtt/kitchen_dimmer/availability"
     unit_of_measurement: "%"
     device_class: "battery"
     value_template: "{{ value_json.battery }}"
