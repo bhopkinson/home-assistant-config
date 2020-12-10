@@ -41,11 +41,11 @@ light:
 #     schema: "json"
 #     command_topic: "zigbee2mqtt/porch_bulb_2/set"
 
-#   - platform: group
-#     name: Porch
-#     entities:
-#       - light.porch_bulb_1
-#       - light.porch_bulb_2
+  - platform: group
+    name: Porch
+    entities:
+      - light.porch_bulb_1
+      - light.porch_bulb_2
 
 #   - platform: "mqtt"
 #     name: canopy_bulb_1
@@ -71,12 +71,12 @@ light:
 #     schema: "json"
 #     command_topic: "zigbee2mqtt/canopy_bulb_3/set"
 
-#   - platform: group
-#     name: Canopy
-#     entities:
-#       - light.canopy_bulb_1
-#       - light.canopy_bulb_2
-#       - light.canopy_bulb_3
+  - platform: group
+    name: Canopy
+    entities:
+      - light.canopy_bulb_1
+      - light.canopy_bulb_2
+      - light.canopy_bulb_3
 
 # binary_sensor:
 #   - platform: "mqtt"

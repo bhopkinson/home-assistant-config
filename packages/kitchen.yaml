@@ -8,6 +8,12 @@ light:
     schema: "json"
     command_topic: "zigbee2mqtt/kitchen_ceiling_group/set"
 
+  - platform: group
+    name: Kitchen
+    entities:
+      - light.kitchen_ceiling_1
+      - light.kitchen_ceiling_2
+
   # - platform: "mqtt"
   #   name: kitchen_ceiling_1
   #   state_topic: "zigbee2mqtt/kitchen_ceiling_1"
