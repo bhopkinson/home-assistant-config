@@ -39,13 +39,13 @@ light:
 #     schema: "json"
 #     command_topic: "zigbee2mqtt/utility_bulb_4/set"
 
-#   - platform: group
-#     name: Utility
-#     entities:
-#       - light.utility_bulb_1
-#       - light.utility_bulb_2
-#       - light.utility_bulb_3
-#       - light.utility_bulb_4
+  - platform: group
+    name: Utility
+    entities:
+      - light.utility_bulb_1
+      - light.utility_bulb_2
+      - light.utility_bulb_3
+      - light.utility_bulb_4
 
 # binary_sensor:
 #   - platform: "mqtt"
