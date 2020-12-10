@@ -1,12 +1,12 @@
 light:
-  # - platform: "mqtt"
-  #   name: kitchen_ceiling_group
-  #   state_topic: "zigbee2mqtt/kitchen_ceiling_group" # zigbee2mqtt group friendlyname: kitchen_ceiling_group
-  #   availability_topic: "zigbee2mqtt/bridge/state"
-  #   brightness: true
-  #   color_temp: true
-  #   schema: "json"
-  #   command_topic: "zigbee2mqtt/kitchen_ceiling_group/set"
+  - platform: "mqtt"
+    name: kitchen_ceiling_group
+    state_topic: "zigbee2mqtt/kitchen_ceiling_group" # zigbee2mqtt group friendlyname: kitchen_ceiling_group
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    color_temp: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/kitchen_ceiling_group/set"
 
   # - platform: "mqtt"
   #   name: kitchen_ceiling_1

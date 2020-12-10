@@ -1,21 +1,21 @@
 # # Porch/Canopy bulbs - Tradfri GU10 bulbs - LED1650R5
 
-# light:
-#   - platform: "mqtt"
-#     name: porch_group
-#     state_topic: "zigbee2mqtt/porch_group" # zigbee2mqtt group friendlyname: porch_group
-#     availability_topic: "zigbee2mqtt/bridge/state"
-#     brightness: true
-#     schema: "json"
-#     command_topic: "zigbee2mqtt/porch_group/set"
+light:
+  - platform: "mqtt"
+    name: porch_group
+    state_topic: "zigbee2mqtt/porch_group" # zigbee2mqtt group friendlyname: porch_group
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/porch_group/set"
 
-#   - platform: "mqtt"
-#     name: canopy_group
-#     state_topic: "zigbee2mqtt/canopy_group" # zigbee2mqtt group friendlyname: canopy_group
-#     availability_topic: "zigbee2mqtt/bridge/state"
-#     brightness: true
-#     schema: "json"
-#     command_topic: "zigbee2mqtt/canopy_group/set"
+  - platform: "mqtt"
+    name: canopy_group
+    state_topic: "zigbee2mqtt/canopy_group" # zigbee2mqtt group friendlyname: canopy_group
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/canopy_group/set"
 
 #   - platform: "mqtt"
 #     name: sign

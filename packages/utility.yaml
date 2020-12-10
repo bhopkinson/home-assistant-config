@@ -1,11 +1,11 @@
-# light:
-#   - platform: "mqtt"
-#     name: utility_group
-#     state_topic: "zigbee2mqtt/utility_group" # zigbee2mqtt group friendlyname: utility_group
-#     availability_topic: "zigbee2mqtt/bridge/state"
-#     brightness: true
-#     schema: "json"
-#     command_topic: "zigbee2mqtt/utility_group/set"
+light:
+  - platform: "mqtt"
+    name: utility_group
+    state_topic: "zigbee2mqtt/utility_group" # zigbee2mqtt group friendlyname: utility_group
+    availability_topic: "zigbee2mqtt/bridge/state"
+    brightness: true
+    schema: "json"
+    command_topic: "zigbee2mqtt/utility_group/set"
 
 #   - platform: "mqtt"
 #     name: utility_bulb_1
