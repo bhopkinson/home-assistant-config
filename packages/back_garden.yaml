@@ -1,11 +1,11 @@
 binary_sensor:
-  - platform: "mqtt"
-    name: back_gate_motion_occupancy
-    state_topic: "zigbee2mqtt/back_gate_motion/occupancy"
-    availability_topic: "zigbee2mqtt/back_gate_motion/availability"
-    payload_on: "true"
-    off_delay: 1
-    device_class: "motion"
+  # - platform: "mqtt"
+  #   name: back_gate_motion_occupancy
+  #   state_topic: "zigbee2mqtt/back_gate_motion/occupancy"
+  #   availability_topic: "zigbee2mqtt/back_gate_motion/availability"
+  #   payload_on: "true"
+  #   off_delay: 1
+  #   device_class: "motion"
 
   - platform: "template"
     sensors:
@@ -16,27 +16,27 @@ binary_sensor:
             or is_state('binary_sensor.garage_side_door', 'on')
             or is_state('binary_sensor.summer_house_door', 'on') }}
 
-sensor:
-  - platform: "mqtt"
-    name: back_gate_motion_illuminance
-    state_topic: "zigbee2mqtt/back_gate_motion/illuminance"
-    availability_topic: "zigbee2mqtt/back_gate_motion/availability"
-    unit_of_measurement: "lx"
-    device_class: "illuminance"
+# sensor:
+#   - platform: "mqtt"
+#     name: back_gate_motion_illuminance
+#     state_topic: "zigbee2mqtt/back_gate_motion/illuminance"
+#     availability_topic: "zigbee2mqtt/back_gate_motion/availability"
+#     unit_of_measurement: "lx"
+#     device_class: "illuminance"
 
-  - platform: "mqtt"
-    name: back_gate_motion_temperature
-    state_topic: "zigbee2mqtt/back_gate_motion/temperature"
-    availability_topic: "zigbee2mqtt/back_gate_motion/availability"
-    unit_of_measurement: "°C"
-    device_class: "temperature"
+#   - platform: "mqtt"
+#     name: back_gate_motion_temperature
+#     state_topic: "zigbee2mqtt/back_gate_motion/temperature"
+#     availability_topic: "zigbee2mqtt/back_gate_motion/availability"
+#     unit_of_measurement: "°C"
+#     device_class: "temperature"
 
-  - platform: "mqtt"
-    name: back_gate_motion_battery
-    state_topic: "zigbee2mqtt/back_gate_motion/battery"
-    availability_topic: "zigbee2mqtt/back_gate_motion/availability"
-    unit_of_measurement: "%"
-    device_class: "battery"
+#   - platform: "mqtt"
+#     name: back_gate_motion_battery
+#     state_topic: "zigbee2mqtt/back_gate_motion/battery"
+#     availability_topic: "zigbee2mqtt/back_gate_motion/availability"
+#     unit_of_measurement: "%"
+#     device_class: "battery"
 
 light:
   - platform: "mqtt"

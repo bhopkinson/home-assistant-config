@@ -1,103 +1,103 @@
-# Porch/Canopy bulbs - Tradfri GU10 bulbs - LED1650R5
+# # Porch/Canopy bulbs - Tradfri GU10 bulbs - LED1650R5
 
-light:
-  - platform: "mqtt"
-    name: porch_group
-    state_topic: "zigbee2mqtt/porch_group" # zigbee2mqtt group friendlyname: porch_group
-    availability_topic: "zigbee2mqtt/bridge/state"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/porch_group/set"
+# light:
+#   - platform: "mqtt"
+#     name: porch_group
+#     state_topic: "zigbee2mqtt/porch_group" # zigbee2mqtt group friendlyname: porch_group
+#     availability_topic: "zigbee2mqtt/bridge/state"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/porch_group/set"
 
-  - platform: "mqtt"
-    name: canopy_group
-    state_topic: "zigbee2mqtt/canopy_group" # zigbee2mqtt group friendlyname: canopy_group
-    availability_topic: "zigbee2mqtt/bridge/state"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/canopy_group/set"
+#   - platform: "mqtt"
+#     name: canopy_group
+#     state_topic: "zigbee2mqtt/canopy_group" # zigbee2mqtt group friendlyname: canopy_group
+#     availability_topic: "zigbee2mqtt/bridge/state"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/canopy_group/set"
 
-  - platform: "mqtt"
-    name: sign
-    state_topic: "zigbee2mqtt/sign_bulb/ha_state"
-    availability_topic: "zigbee2mqtt/sign_bulb/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/sign_bulb/set"
+#   - platform: "mqtt"
+#     name: sign
+#     state_topic: "zigbee2mqtt/sign_bulb/ha_state"
+#     availability_topic: "zigbee2mqtt/sign_bulb/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/sign_bulb/set"
 
-  - platform: "mqtt"
-    name: porch_bulb_1
-    state_topic: "zigbee2mqtt/porch_bulb_1/ha_state"
-    availability_topic: "zigbee2mqtt/porch_bulb_1/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/porch_bulb_1/set"
+#   - platform: "mqtt"
+#     name: porch_bulb_1
+#     state_topic: "zigbee2mqtt/porch_bulb_1/ha_state"
+#     availability_topic: "zigbee2mqtt/porch_bulb_1/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/porch_bulb_1/set"
 
-  - platform: "mqtt"
-    name: porch_bulb_2
-    state_topic: "zigbee2mqtt/porch_bulb_2/ha_state"
-    availability_topic: "zigbee2mqtt/porch_bulb_2/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/porch_bulb_2/set"
+#   - platform: "mqtt"
+#     name: porch_bulb_2
+#     state_topic: "zigbee2mqtt/porch_bulb_2/ha_state"
+#     availability_topic: "zigbee2mqtt/porch_bulb_2/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/porch_bulb_2/set"
 
-  - platform: group
-    name: Porch
-    entities:
-      - light.porch_bulb_1
-      - light.porch_bulb_2
+#   - platform: group
+#     name: Porch
+#     entities:
+#       - light.porch_bulb_1
+#       - light.porch_bulb_2
 
-  - platform: "mqtt"
-    name: canopy_bulb_1
-    state_topic: "zigbee2mqtt/canopy_bulb_1/ha_state"
-    availability_topic: "zigbee2mqtt/canopy_bulb_1/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/canopy_bulb_1/set"
+#   - platform: "mqtt"
+#     name: canopy_bulb_1
+#     state_topic: "zigbee2mqtt/canopy_bulb_1/ha_state"
+#     availability_topic: "zigbee2mqtt/canopy_bulb_1/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/canopy_bulb_1/set"
 
-  - platform: "mqtt"
-    name: canopy_bulb_2
-    state_topic: "zigbee2mqtt/canopy_bulb_2/ha_state"
-    availability_topic: "zigbee2mqtt/canopy_bulb_2/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/canopy_bulb_2/set"
+#   - platform: "mqtt"
+#     name: canopy_bulb_2
+#     state_topic: "zigbee2mqtt/canopy_bulb_2/ha_state"
+#     availability_topic: "zigbee2mqtt/canopy_bulb_2/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/canopy_bulb_2/set"
 
-  - platform: "mqtt"
-    name: canopy_bulb_3
-    state_topic: "zigbee2mqtt/canopy_bulb_3/ha_state"
-    availability_topic: "zigbee2mqtt/canopy_bulb_3/availability"
-    brightness: true
-    schema: "json"
-    command_topic: "zigbee2mqtt/canopy_bulb_3/set"
+#   - platform: "mqtt"
+#     name: canopy_bulb_3
+#     state_topic: "zigbee2mqtt/canopy_bulb_3/ha_state"
+#     availability_topic: "zigbee2mqtt/canopy_bulb_3/availability"
+#     brightness: true
+#     schema: "json"
+#     command_topic: "zigbee2mqtt/canopy_bulb_3/set"
 
-  - platform: group
-    name: Canopy
-    entities:
-      - light.canopy_bulb_1
-      - light.canopy_bulb_2
-      - light.canopy_bulb_3
+#   - platform: group
+#     name: Canopy
+#     entities:
+#       - light.canopy_bulb_1
+#       - light.canopy_bulb_2
+#       - light.canopy_bulb_3
 
-binary_sensor:
-  - platform: "mqtt"
-    name: canopy_motion_occupancy
-    state_topic: "zigbee2mqtt/canopy_motion/occupancy"
-    availability_topic: "zigbee2mqtt/canopy_motion/availability"
-    payload_on: "true"
-    off_delay: 1
-    device_class: "motion"
+# binary_sensor:
+#   - platform: "mqtt"
+#     name: canopy_motion_occupancy
+#     state_topic: "zigbee2mqtt/canopy_motion/occupancy"
+#     availability_topic: "zigbee2mqtt/canopy_motion/availability"
+#     payload_on: "true"
+#     off_delay: 1
+#     device_class: "motion"
 
-sensor:
-  - platform: "mqtt"
-    name: canopy_motion_illuminance
-    state_topic: "zigbee2mqtt/canopy_motion/illuminance"
-    availability_topic: "zigbee2mqtt/canopy_motion/availability"
-    unit_of_measurement: "lx"
-    device_class: "illuminance"
+# sensor:
+#   - platform: "mqtt"
+#     name: canopy_motion_illuminance
+#     state_topic: "zigbee2mqtt/canopy_motion/illuminance"
+#     availability_topic: "zigbee2mqtt/canopy_motion/availability"
+#     unit_of_measurement: "lx"
+#     device_class: "illuminance"
 
-  - platform: "mqtt"
-    name: canopy_motion_battery
-    state_topic: "zigbee2mqtt/canopy_motion/battery"
-    availability_topic: "zigbee2mqtt/canopy_motion/availability"
-    unit_of_measurement: "%"
-    device_class: "battery"
+#   - platform: "mqtt"
+#     name: canopy_motion_battery
+#     state_topic: "zigbee2mqtt/canopy_motion/battery"
+#     availability_topic: "zigbee2mqtt/canopy_motion/availability"
+#     unit_of_measurement: "%"
+#     device_class: "battery"

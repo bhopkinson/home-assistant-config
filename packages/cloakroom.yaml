@@ -20,40 +20,40 @@ binary_sensor:
     payload_available: "true"
     payload_not_available: "false"
 
-  - platform: "mqtt"
-    name: cloakroom_motion_occupancy
-    state_topic: "zigbee2mqtt/cloakroom_motion/occupancy"
-    availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
-    payload_on: "true"
-    off_delay: 1
-    device_class: "motion"
+  # - platform: "mqtt"
+  #   name: cloakroom_motion_occupancy
+  #   state_topic: "zigbee2mqtt/cloakroom_motion/occupancy"
+  #   availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
+  #   payload_on: "true"
+  #   off_delay: 1
+  #   device_class: "motion"
 
-  - platform: "mqtt"
-    name: cloakroom_door
-    state_topic: "zigbee2mqtt/cloakroom_door/contact"
-    availability_topic: "zigbee2mqtt/cloakroom_door/availability"
-    payload_on: "false"
-    payload_off: "true"
-    device_class: "door"
+  # - platform: "mqtt"
+  #   name: cloakroom_door
+  #   state_topic: "zigbee2mqtt/cloakroom_door/contact"
+  #   availability_topic: "zigbee2mqtt/cloakroom_door/availability"
+  #   payload_on: "false"
+  #   payload_off: "true"
+  #   device_class: "door"
 
-sensor:
-  - platform: "mqtt"
-    name: cloakroom_motion_illuminance
-    state_topic: "zigbee2mqtt/cloakroom_motion/illuminance"
-    availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
-    unit_of_measurement: "lx"
-    device_class: "illuminance"
+# sensor:
+#   - platform: "mqtt"
+#     name: cloakroom_motion_illuminance
+#     state_topic: "zigbee2mqtt/cloakroom_motion/illuminance"
+#     availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
+#     unit_of_measurement: "lx"
+#     device_class: "illuminance"
 
-  - platform: "mqtt"
-    name: cloakroom_motion_battery
-    state_topic: "zigbee2mqtt/cloakroom_motion/battery"
-    availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
-    unit_of_measurement: "%"
-    device_class: "battery"
+#   - platform: "mqtt"
+#     name: cloakroom_motion_battery
+#     state_topic: "zigbee2mqtt/cloakroom_motion/battery"
+#     availability_topic: "zigbee2mqtt/cloakroom_motion/availability"
+#     unit_of_measurement: "%"
+#     device_class: "battery"
 
-  - platform: "mqtt"
-    name: cloakroom_door_battery
-    state_topic: "zigbee2mqtt/cloakroom_door/battery"
-    availability_topic: "zigbee2mqtt/cloakroom_door/availability"
-    unit_of_measurement: "%"
-    device_class: "battery"
+#   - platform: "mqtt"
+#     name: cloakroom_door_battery
+#     state_topic: "zigbee2mqtt/cloakroom_door/battery"
+#     availability_topic: "zigbee2mqtt/cloakroom_door/availability"
+#     unit_of_measurement: "%"
+#     device_class: "battery"
