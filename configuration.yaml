@@ -58,7 +58,7 @@ mqtt:
   broker: MQTT
   port: 1883
   client_id: homeassistant
-  discovery: false
+  discovery: true
   birth_message:
     topic: 'homeassistant/status'
     payload: 'online'

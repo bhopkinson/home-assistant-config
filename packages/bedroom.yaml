@@ -1,18 +1,18 @@
-switch:
-  - platform: "mqtt"
-    name: electric_blanket_brad
-    state_topic: "zigbee2mqtt/electric_blanket_brad"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    payload_off: "OFF"
-    payload_on: "ON"
-    value_template: "{{ value_json.state }}"
-    command_topic: "zigbee2mqtt/electric_blanket_brad/set"
+# switch:
+#   - platform: "mqtt"
+#     name: electric_blanket_brad
+#     state_topic: "zigbee2mqtt/electric_blanket_brad"
+#     availability_topic: "zigbee2mqtt/electric_blanket_brad/availability"
+#     payload_off: "OFF"
+#     payload_on: "ON"
+#     value_template: "{{ value_json.state }}"
+#     command_topic: "zigbee2mqtt/electric_blanket_brad/set"
 
-  - platform: "mqtt"
-    name: electric_blanket_heather
-    state_topic: "zigbee2mqtt/electric_blanket_heather"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    payload_off: "OFF"
-    payload_on: "ON"
-    value_template: "{{ value_json.state }}"
-    command_topic: "zigbee2mqtt/electric_blanket_heather/set"
+#   - platform: "mqtt"
+#     name: electric_blanket_heather
+#     state_topic: "zigbee2mqtt/electric_blanket_heather"
+#     availability_topic: "zigbee2mqtt/electric_blanket_heather/availability"
+#     payload_off: "OFF"
+#     payload_on: "ON"
+#     value_template: "{{ value_json.state }}"
+#     command_topic: "zigbee2mqtt/electric_blanket_heather/set"

@@ -1,27 +1,27 @@
-light:
-  - platform: switch
-    name: christmas_tree_lights
-    entity_id: switch.christmas_tree_lights
+# light:
+#   - platform: switch
+#     name: christmas_tree_lights
+#     entity_id: switch.christmas_tree_lights
 
-  - platform: switch
-    name: christmas_candle_bridge
-    entity_id: switch.christmas_candle_bridge
+#   - platform: switch
+#     name: christmas_candle_bridge
+#     entity_id: switch.christmas_candle_bridge
 
-switch:
-  - platform: "mqtt"
-    name: christmas_tree_lights
-    state_topic: "zigbee2mqtt/christmas_tree_lights"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    payload_off: "OFF"
-    payload_on: "ON"
-    value_template: "{{ value_json.state }}"
-    command_topic: "zigbee2mqtt/christmas_tree_lights/set"
+# switch:
+#   - platform: "mqtt"
+#     name: christmas_tree_lights
+#     state_topic: "zigbee2mqtt/christmas_tree_lights"
+#     availability_topic: "zigbee2mqtt/christmas_tree_lights/availability"
+#     payload_off: "OFF"
+#     payload_on: "ON"
+#     value_template: "{{ value_json.state }}"
+#     command_topic: "zigbee2mqtt/christmas_tree_lights/set"
 
-  - platform: "mqtt"
-    name: christmas_candle_bridge
-    state_topic: "zigbee2mqtt/christmas_candle_bridge"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    payload_off: "OFF"
-    payload_on: "ON"
-    value_template: "{{ value_json.state }}"
-    command_topic: "zigbee2mqtt/christmas_candle_bridge/set"
+#   - platform: "mqtt"
+#     name: christmas_candle_bridge
+#     state_topic: "zigbee2mqtt/christmas_candle_bridge"
+#     availability_topic: "zigbee2mqtt/christmas_candle_bridge/availability"
+#     payload_off: "OFF"
+#     payload_on: "ON"
+#     value_template: "{{ value_json.state }}"
+#     command_topic: "zigbee2mqtt/christmas_candle_bridge/set"
